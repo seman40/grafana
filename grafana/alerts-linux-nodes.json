@@ -9,7 +9,10 @@
       "list": [
         {
           "builtIn": 1,
-          "datasource": "-- Grafana --",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -33,7 +36,10 @@
     "liveNow": false,
     "panels": [
       {
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
+        },
         "gridPos": {
           "h": 9,
           "w": 8,
@@ -43,30 +49,49 @@
         "id": 2,
         "links": [],
         "options": {
+          "alertInstanceLabelFilter": "",
           "alertName": "",
           "dashboardAlerts": false,
           "dashboardTitle": "",
-          "folderId": null,
+          "groupBy": [],
+          "groupMode": "default",
           "maxItems": 10,
           "showOptions": "current",
           "sortOrder": 1,
           "stateFilter": {
             "alerting": false,
+            "error": true,
             "execution_error": false,
+            "firing": true,
+            "noData": false,
             "no_data": false,
+            "normal": false,
             "ok": false,
             "paused": false,
             "pending": false
           },
-          "tags": []
+          "tags": [],
+          "viewMode": "list"
         },
         "pluginVersion": "8.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "Alerts Status",
         "transparent": true,
         "type": "alertlist"
       },
       {
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
+        },
         "gridPos": {
           "h": 9,
           "w": 16,
@@ -76,30 +101,49 @@
         "id": 3,
         "links": [],
         "options": {
+          "alertInstanceLabelFilter": "",
           "alertName": "",
           "dashboardAlerts": false,
           "dashboardTitle": "",
-          "folderId": null,
+          "groupBy": [],
+          "groupMode": "default",
           "maxItems": "5",
           "showOptions": "changes",
           "sortOrder": 1,
           "stateFilter": {
             "alerting": false,
+            "error": true,
             "execution_error": false,
+            "firing": true,
+            "noData": false,
             "no_data": false,
+            "normal": false,
             "ok": false,
             "paused": false,
             "pending": false
           },
-          "tags": []
+          "tags": [],
+          "viewMode": "list"
         },
         "pluginVersion": "8.2.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
+            "refId": "A"
+          }
+        ],
         "title": "Alerts Log",
         "transparent": true,
         "type": "alertlist"
       },
       {
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
+        },
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -107,8 +151,11 @@
             },
             "custom": {
               "align": "center",
-              "displayMode": "color-text",
-              "filterable": false
+              "cellOptions": {
+                "type": "color-text"
+              },
+              "filterable": false,
+              "inspect": false
             },
             "decimals": 2,
             "displayName": "",
@@ -144,15 +191,14 @@
                   "value": "time: YYYY-MM-DD HH:mm:ss"
                 },
                 {
-                  "id": "custom.align",
-                  "value": null
+                  "id": "custom.align"
                 }
               ]
             }
           ]
         },
         "gridPos": {
-          "h": 16,
+          "h": 19,
           "w": 24,
           "x": 0,
           "y": 9
@@ -160,11 +206,24 @@
         "id": 1,
         "links": [],
         "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
           "showHeader": true
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "10.0.0",
         "targets": [
           {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
             "exemplar": true,
             "expr": "100.0 - 100 * ((node_filesystem_avail_bytes {mountpoint=\"/\"} / 1000 / 1000 ) / (node_filesystem_size_bytes {mountpoint=\"/\"} / 1024 / 1024))",
             "format": "table",
@@ -175,8 +234,6 @@
             "refId": "A"
           }
         ],
-        "timeFrom": null,
-        "timeShift": null,
         "title": "Linux Nodes Disk Usage",
         "transformations": [
           {
@@ -237,7 +294,10 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
+        },
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -250,7 +310,7 @@
           "h": 7,
           "w": 24,
           "x": 0,
-          "y": 25
+          "y": 28
         },
         "hiddenSeries": false,
         "id": 4,
@@ -275,7 +335,7 @@
         },
         "paceLength": 10,
         "percentage": false,
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "10.0.0",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -285,6 +345,10 @@
         "steppedLine": false,
         "targets": [
           {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
             "exemplar": true,
             "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total[1m])) * 100)",
             "format": "time_series",
@@ -305,9 +369,7 @@
             "visible": true
           }
         ],
-        "timeFrom": null,
         "timeRegions": [],
-        "timeShift": null,
         "title": "Linux Nodes CPU Usage",
         "tooltip": {
           "shared": true,
@@ -317,16 +379,13 @@
         "transparent": true,
         "type": "graph",
         "xaxis": {
-          "buckets": null,
           "mode": "time",
-          "name": null,
           "show": true,
           "values": []
         },
         "yaxes": [
           {
             "format": "percent",
-            "label": null,
             "logBase": 1,
             "max": "100",
             "min": "0",
@@ -334,16 +393,12 @@
           },
           {
             "format": "short",
-            "label": null,
             "logBase": 1,
-            "max": null,
-            "min": null,
             "show": true
           }
         ],
         "yaxis": {
-          "align": false,
-          "alignLevel": null
+          "align": false
         }
       },
       {
@@ -386,7 +441,10 @@
         "bars": false,
         "dashLength": 10,
         "dashes": false,
-        "datasource": "Prometheus",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
+        },
         "fieldConfig": {
           "defaults": {
             "links": []
@@ -399,7 +457,7 @@
           "h": 7,
           "w": 24,
           "x": 0,
-          "y": 32
+          "y": 35
         },
         "hiddenSeries": false,
         "id": 5,
@@ -422,7 +480,7 @@
         },
         "paceLength": 10,
         "percentage": false,
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "10.0.0",
         "pointradius": 5,
         "points": false,
         "renderer": "flot",
@@ -432,6 +490,10 @@
         "steppedLine": false,
         "targets": [
           {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
             "exemplar": false,
             "expr": "100*(node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes) / node_memory_MemTotal_bytes ",
             "format": "time_series",
@@ -451,9 +513,7 @@
             "visible": true
           }
         ],
-        "timeFrom": null,
         "timeRegions": [],
-        "timeShift": null,
         "title": "Linux Nodes Memory Usage",
         "tooltip": {
           "shared": true,
@@ -463,39 +523,30 @@
         "transparent": true,
         "type": "graph",
         "xaxis": {
-          "buckets": null,
           "mode": "time",
-          "name": null,
           "show": true,
           "values": []
         },
         "yaxes": [
           {
-            "decimals": null,
             "format": "percent",
-            "label": null,
             "logBase": 1,
             "max": "100",
-            "min": null,
             "show": true
           },
           {
             "format": "short",
-            "label": null,
             "logBase": 1,
-            "max": null,
-            "min": null,
             "show": true
           }
         ],
         "yaxis": {
-          "align": false,
-          "alignLevel": null
+          "align": false
         }
       }
     ],
     "refresh": "",
-    "schemaVersion": 31,
+    "schemaVersion": 38,
     "style": "dark",
     "tags": [
       "alerts",
@@ -534,7 +585,8 @@
       ]
     },
     "timezone": "",
-    "title": "Alerts - Linux Nodes"
+    "title": "Alerts - Linux Nodes",
+    "weekStart": ""
   },
   "status": {}
 }
