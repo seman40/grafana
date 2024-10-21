@@ -123,8 +123,9 @@
           ]
         },
         "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
+          "default": false,
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
         },
         "description": "Максимально неинформативный и некрасивый график, нужный лишь для алертинга.",
         "fieldConfig": {
@@ -222,15 +223,14 @@
         "targets": [
           {
             "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
             },
+            "editorMode": "code",
             "expr": "confluence_maintenance_expiry_days_gauge",
-            "format": "time_series",
-            "instant": true,
-            "interval": "",
-            "intervalFactor": 1,
-            "legendFormat": "",
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
             "refId": "A"
           }
         ],
