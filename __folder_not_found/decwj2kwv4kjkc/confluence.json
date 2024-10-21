@@ -280,8 +280,9 @@
           ]
         },
         "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
+          "default": false,
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
         },
         "description": "192.168.0.120",
         "fieldConfig": {
@@ -364,15 +365,14 @@
         "targets": [
           {
             "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
             },
+            "editorMode": "code",
             "expr": "100 - (node_filesystem_avail_bytes{instance=\"confluence.elcom.local:9100\",job=\"prometheus\"}) / node_filesystem_size_bytes * 100",
-            "format": "time_series",
             "instant": false,
-            "interval": "",
-            "intervalFactor": 2,
-            "legendFormat": "{{mountpoint}}",
+            "legendFormat": "__auto",
+            "range": true,
             "refId": "A"
           }
         ],
