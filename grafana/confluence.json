@@ -513,7 +513,7 @@
             "editorMode": "code",
             "expr": "jvm_memory_bytes_used{job=\"confluence\"}",
             "instant": false,
-            "legendFormat": "__auto",
+            "legendFormat": "{{area}} memory",
             "range": true,
             "refId": "A"
           }
