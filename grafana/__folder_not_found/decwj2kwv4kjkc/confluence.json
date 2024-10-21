@@ -227,10 +227,11 @@
               "uid": "Llmbz5f4z"
             },
             "editorMode": "code",
+            "exemplar": false,
             "expr": "confluence_maintenance_expiry_days_gauge",
-            "instant": false,
+            "instant": true,
             "legendFormat": "__auto",
-            "range": true,
+            "range": false,
             "refId": "A"
           }
         ],
@@ -371,7 +372,7 @@
             "editorMode": "code",
             "expr": "100 - (node_filesystem_avail_bytes{instance=\"confluence.elcom.local:9100\",job=\"prometheus\"}) / node_filesystem_size_bytes * 100",
             "instant": false,
-            "legendFormat": "__auto",
+            "legendFormat": "{{mountpoint}}",
             "range": true,
             "refId": "A"
           }
