@@ -676,7 +676,7 @@
           "x": 0,
           "y": 1
         },
-        "id": 80,
+        "id": 83,
         "options": {
           "legend": {
             "calcs": [],
@@ -696,11 +696,11 @@
               "type": "influxdb",
               "uid": "adyu2hcj87m68e"
             },
-            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-02\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-01\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pm-do-02 temperature",
+        "title": "pm-01 temperature",
         "type": "timeseries"
       },
       {
@@ -862,7 +862,7 @@
           "x": 0,
           "y": 9
         },
-        "id": 78,
+        "id": 80,
         "options": {
           "legend": {
             "calcs": [],
@@ -882,11 +882,11 @@
               "type": "influxdb",
               "uid": "adyu2hcj87m68e"
             },
-            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-05\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-02\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pve-05 temperature",
+        "title": "pm-do-02 temperature",
         "type": "timeseries"
       },
       {
@@ -1048,6 +1048,99 @@
           "x": 0,
           "y": 17
         },
+        "id": 78,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "adyu2hcj87m68e"
+            },
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-05\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "refId": "A"
+          }
+        ],
+        "title": "pve-05 temperature",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "adyu2hcj87m68e"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 25
+        },
         "id": 79,
         "options": {
           "legend": {
@@ -1081,7 +1174,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 25
+          "y": 33
         },
         "id": 49,
         "panels": [
@@ -1149,7 +1242,7 @@
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 336
+              "y": 399
             },
             "id": 16,
             "options": {
@@ -1260,7 +1353,7 @@
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 336
+              "y": 399
             },
             "id": 19,
             "options": {
@@ -1317,7 +1410,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 26
+          "y": 34
         },
         "id": 23,
         "panels": [
@@ -1407,7 +1500,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 368
+              "y": 431
             },
             "id": 21,
             "options": {
@@ -1524,7 +1617,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 368
+              "y": 431
             },
             "id": 24,
             "options": {
@@ -1619,7 +1712,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 377
+              "y": 440
             },
             "id": 26,
             "options": {
@@ -1715,7 +1808,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 377
+              "y": 440
             },
             "id": 27,
             "options": {
@@ -1809,7 +1902,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 385
+              "y": 448
             },
             "id": 28,
             "options": {
@@ -1900,7 +1993,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 385
+              "y": 448
             },
             "id": 29,
             "options": {
@@ -1992,7 +2085,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 393
+              "y": 456
             },
             "id": 30,
             "options": {
@@ -2087,7 +2180,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 393
+              "y": 456
             },
             "id": 31,
             "options": {
@@ -2182,7 +2275,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 401
+              "y": 464
             },
             "id": 32,
             "options": {
@@ -2274,7 +2367,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 401
+              "y": 464
             },
             "id": 33,
             "options": {
@@ -2366,7 +2459,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 409
+              "y": 472
             },
             "id": 34,
             "options": {
@@ -2458,7 +2551,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 409
+              "y": 472
             },
             "id": 35,
             "options": {
@@ -2550,7 +2643,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 417
+              "y": 480
             },
             "id": 36,
             "options": {
@@ -2642,7 +2735,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 417
+              "y": 480
             },
             "id": 37,
             "options": {
