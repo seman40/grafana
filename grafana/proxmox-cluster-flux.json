@@ -674,7 +674,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 2
+          "y": 1
         },
         "id": 80,
         "options": {
@@ -767,7 +767,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 2
+          "y": 1
         },
         "id": 81,
         "options": {
@@ -860,7 +860,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 11
+          "y": 9
         },
         "id": 79,
         "options": {
@@ -952,8 +952,101 @@
         "gridPos": {
           "h": 8,
           "w": 12,
+          "x": 12,
+          "y": 9
+        },
+        "id": 82,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "adyu2hcj87m68e"
+            },
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-07\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "refId": "A"
+          }
+        ],
+        "title": "pm-do-07 watts",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "adyu2hcj87m68e"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
           "x": 0,
-          "y": 20
+          "y": 17
         },
         "id": 78,
         "options": {
@@ -988,7 +1081,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 28
+          "y": 25
         },
         "id": 49,
         "panels": [
@@ -1056,7 +1149,7 @@
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 210
+              "y": 273
             },
             "id": 16,
             "options": {
@@ -1167,7 +1260,7 @@
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 210
+              "y": 273
             },
             "id": 19,
             "options": {
@@ -1224,7 +1317,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 29
+          "y": 26
         },
         "id": 23,
         "panels": [
@@ -1314,7 +1407,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 242
+              "y": 305
             },
             "id": 21,
             "options": {
@@ -1431,7 +1524,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 242
+              "y": 305
             },
             "id": 24,
             "options": {
@@ -1526,7 +1619,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 251
+              "y": 314
             },
             "id": 26,
             "options": {
@@ -1622,7 +1715,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 251
+              "y": 314
             },
             "id": 27,
             "options": {
@@ -1716,7 +1809,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 259
+              "y": 322
             },
             "id": 28,
             "options": {
@@ -1807,7 +1900,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 259
+              "y": 322
             },
             "id": 29,
             "options": {
@@ -1899,7 +1992,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 267
+              "y": 330
             },
             "id": 30,
             "options": {
@@ -1994,7 +2087,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 267
+              "y": 330
             },
             "id": 31,
             "options": {
@@ -2089,7 +2182,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 275
+              "y": 338
             },
             "id": 32,
             "options": {
@@ -2181,7 +2274,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 275
+              "y": 338
             },
             "id": 33,
             "options": {
@@ -2273,7 +2366,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 283
+              "y": 346
             },
             "id": 34,
             "options": {
@@ -2365,7 +2458,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 283
+              "y": 346
             },
             "id": 35,
             "options": {
@@ -2457,7 +2550,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 291
+              "y": 354
             },
             "id": 36,
             "options": {
@@ -2549,7 +2642,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 291
+              "y": 354
             },
             "id": 37,
             "options": {
