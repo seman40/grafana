@@ -62,8 +62,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "#EAB839",
@@ -133,8 +132,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -200,8 +198,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -268,8 +265,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -338,8 +334,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -414,8 +409,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -483,8 +477,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "#EAB839",
@@ -557,8 +550,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "#EAB839",
@@ -868,7 +860,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 17
+          "y": 11
         },
         "id": 79,
         "options": {
@@ -961,7 +953,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 32
+          "y": 20
         },
         "id": 78,
         "options": {
@@ -996,7 +988,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 40
+          "y": 28
         },
         "id": 49,
         "panels": [
@@ -1023,8 +1015,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -1065,7 +1056,7 @@
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 51
+              "y": 210
             },
             "id": 16,
             "options": {
@@ -1135,8 +1126,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -1177,7 +1167,7 @@
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 51
+              "y": 210
             },
             "id": 19,
             "options": {
@@ -1234,7 +1224,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 41
+          "y": 29
         },
         "id": 23,
         "panels": [
@@ -1287,8 +1277,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -1325,7 +1314,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 83
+              "y": 242
             },
             "id": 21,
             "options": {
@@ -1426,8 +1415,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -1443,7 +1431,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 83
+              "y": 242
             },
             "id": 24,
             "options": {
@@ -1523,8 +1511,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -1539,7 +1526,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 92
+              "y": 251
             },
             "id": 26,
             "options": {
@@ -1619,8 +1606,7 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green",
-                      "value": null
+                      "color": "green"
                     },
                     {
                       "color": "red",
@@ -1636,7 +1622,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 92
+              "y": 251
             },
             "id": 27,
             "options": {
@@ -1730,7 +1716,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 100
+              "y": 259
             },
             "id": 28,
             "options": {
@@ -1821,7 +1807,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 100
+              "y": 259
             },
             "id": 29,
             "options": {
@@ -1913,7 +1899,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 108
+              "y": 267
             },
             "id": 30,
             "options": {
@@ -2008,7 +1994,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 108
+              "y": 267
             },
             "id": 31,
             "options": {
@@ -2103,7 +2089,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 116
+              "y": 275
             },
             "id": 32,
             "options": {
@@ -2195,7 +2181,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 116
+              "y": 275
             },
             "id": 33,
             "options": {
@@ -2287,7 +2273,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 124
+              "y": 283
             },
             "id": 34,
             "options": {
@@ -2379,7 +2365,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 124
+              "y": 283
             },
             "id": 35,
             "options": {
@@ -2471,7 +2457,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 132
+              "y": 291
             },
             "id": 36,
             "options": {
@@ -2563,7 +2549,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 132
+              "y": 291
             },
             "id": 37,
             "options": {
