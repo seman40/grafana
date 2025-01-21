@@ -862,7 +862,7 @@
           "x": 0,
           "y": 9
         },
-        "id": 79,
+        "id": 78,
         "options": {
           "legend": {
             "calcs": [],
@@ -882,11 +882,11 @@
               "type": "influxdb",
               "uid": "adyu2hcj87m68e"
             },
-            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-07\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-05\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pm-do-07 temperature",
+        "title": "pve-05 temperature",
         "type": "timeseries"
       },
       {
@@ -975,11 +975,11 @@
               "type": "influxdb",
               "uid": "adyu2hcj87m68e"
             },
-            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-07\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-05\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pm-do-07 watts",
+        "title": "pve-05 watts",
         "type": "timeseries"
       },
       {
@@ -1048,7 +1048,7 @@
           "x": 0,
           "y": 17
         },
-        "id": 78,
+        "id": 79,
         "options": {
           "legend": {
             "calcs": [],
@@ -1068,11 +1068,11 @@
               "type": "influxdb",
               "uid": "adyu2hcj87m68e"
             },
-            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-05\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-07\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pve-05 temperature",
+        "title": "pm-do-07 temperature",
         "type": "timeseries"
       },
       {
@@ -1149,7 +1149,7 @@
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 273
+              "y": 336
             },
             "id": 16,
             "options": {
@@ -1260,7 +1260,7 @@
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 273
+              "y": 336
             },
             "id": 19,
             "options": {
@@ -1407,7 +1407,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 305
+              "y": 368
             },
             "id": 21,
             "options": {
@@ -1524,7 +1524,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 305
+              "y": 368
             },
             "id": 24,
             "options": {
@@ -1619,7 +1619,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 314
+              "y": 377
             },
             "id": 26,
             "options": {
@@ -1715,7 +1715,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 314
+              "y": 377
             },
             "id": 27,
             "options": {
@@ -1809,7 +1809,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 322
+              "y": 385
             },
             "id": 28,
             "options": {
@@ -1900,7 +1900,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 322
+              "y": 385
             },
             "id": 29,
             "options": {
@@ -1992,7 +1992,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 330
+              "y": 393
             },
             "id": 30,
             "options": {
@@ -2087,7 +2087,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 330
+              "y": 393
             },
             "id": 31,
             "options": {
@@ -2182,7 +2182,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 338
+              "y": 401
             },
             "id": 32,
             "options": {
@@ -2274,7 +2274,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 338
+              "y": 401
             },
             "id": 33,
             "options": {
@@ -2366,7 +2366,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 346
+              "y": 409
             },
             "id": 34,
             "options": {
@@ -2458,7 +2458,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 346
+              "y": 409
             },
             "id": 35,
             "options": {
@@ -2550,7 +2550,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 354
+              "y": 417
             },
             "id": 36,
             "options": {
@@ -2642,7 +2642,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 354
+              "y": 417
             },
             "id": 37,
             "options": {
