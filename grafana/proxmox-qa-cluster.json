@@ -1050,8 +1050,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -1143,8 +1142,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2853,32 +2851,6 @@
           "refresh": 1,
           "regex": "influxdb-qa",
           "type": "datasource"
-        },
-        {
-          "current": {},
-          "datasource": {
-            "type": "influxdb",
-            "uid": "feb85geg7yadcd"
-          },
-          "definition": "buckets(influxdb-qa)",
-          "includeAll": false,
-          "name": "Bucket",
-          "options": [],
-          "query": {
-            "0": "b",
-            "1": "u",
-            "2": "c",
-            "3": "k",
-            "4": "e",
-            "5": "t",
-            "6": "s",
-            "7": "(",
-            "8": ")",
-            "query": "buckets(influxdb-qa)"
-          },
-          "refresh": 1,
-          "regex": "",
-          "type": "query"
         }
       ]
     },
