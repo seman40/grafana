@@ -2858,7 +2858,7 @@
             "type": "influxdb",
             "uid": "feb85geg7yadcd"
           },
-          "definition": "buckets()",
+          "definition": "buckets(influxdb-qa)",
           "includeAll": false,
           "name": "Bucket",
           "options": [],
@@ -2872,7 +2872,7 @@
             "6": "s",
             "7": "(",
             "8": ")",
-            "query": "buckets()"
+            "query": "buckets(influxdb-qa)"
           },
           "refresh": 1,
           "regex": "",
