@@ -35,7 +35,7 @@
     "liveNow": true,
     "panels": [
       {
-        "collapsed": true,
+        "collapsed": false,
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -43,572 +43,579 @@
           "y": 0
         },
         "id": 18,
-        "panels": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "decimals": 2,
-                "mappings": [],
-                "max": 1,
-                "min": 0,
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "#EAB839",
-                      "value": 0.75
-                    },
-                    {
-                      "color": "red",
-                      "value": 0.8
-                    }
-                  ]
-                },
-                "unit": "percentunit"
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 6,
-              "w": 3,
-              "x": 0,
-              "y": 1
-            },
-            "id": 2,
-            "options": {
-              "colorMode": "value",
-              "graphMode": "area",
-              "justifyMode": "auto",
-              "orientation": "horizontal",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"cpu\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn: mean)",
-                "refId": "A"
-              }
-            ],
-            "title": "Server CPU",
-            "type": "stat"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 3,
-              "w": 3,
-              "x": 3,
-              "y": 1
-            },
-            "id": 4,
-            "options": {
-              "colorMode": "none",
-              "graphMode": "none",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"cpus\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e limit(n:1)",
-                "refId": "A"
-              }
-            ],
-            "title": "Logical Cores",
-            "type": "stat"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "description": "",
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                },
-                "unit": "bytes"
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 3,
-              "w": 3,
-              "x": 6,
-              "y": 1
-            },
-            "id": 8,
-            "options": {
-              "colorMode": "none",
-              "graphMode": "none",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"memory\" and\n    r._field == \"memtotal\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e limit(n:1)",
-                "refId": "A"
-              }
-            ],
-            "title": "Total Memory",
-            "type": "stat"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "description": "",
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                },
-                "unit": "bytes"
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 3,
-              "w": 3,
-              "x": 9,
-              "y": 1
-            },
-            "id": 9,
-            "options": {
-              "colorMode": "none",
-              "graphMode": "none",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"memory\" and\n    r._field == \"swaptotal\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e limit(n:1)",
-                "refId": "A"
-              }
-            ],
-            "title": "Swap Total",
-            "type": "stat"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "displayName": "${__field.labels.host} (${__field.labels.type})",
-                "mappings": [],
-                "max": 100,
-                "min": 0,
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                },
-                "unit": "percent"
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 6,
-              "w": 12,
-              "x": 12,
-              "y": 1
-            },
-            "id": 14,
-            "options": {
-              "displayMode": "gradient",
-              "legend": {
-                "calcs": [],
-                "displayMode": "list",
-                "placement": "bottom",
-                "showLegend": false
-              },
-              "maxVizHeight": 300,
-              "minVizHeight": 10,
-              "minVizWidth": 0,
-              "namePlacement": "auto",
-              "orientation": "horizontal",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showUnfilled": true,
-              "sizing": "auto",
-              "text": {},
-              "valueMode": "color"
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e r._measurement == \"system\")\n  |\u003e filter(fn: (r) =\u003e r._field == \"avail\" or r._field == \"used\")\n  |\u003e filter(fn: (r) =\u003e r[\"nodename\"] == \"${server}\")\n  |\u003e last()\n  |\u003e pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |\u003e map(fn: (r) =\u003e ({ r with \n    _time: r._time,\n    _measurement: r.measurement,\n    _field: \"used_perc\",\n    _value: float(v: 100) / (float(v: r.avail) + float(v: r.used)) * float(v:r.used)\n     }))\n  |\u003e drop(columns: [\"avail\",\"used\"])\n",
-                "refId": "A"
-              }
-            ],
-            "title": "Storage Pools",
-            "type": "bargauge"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "description": "",
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "decimals": 2,
-                "mappings": [],
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "red",
-                      "value": 80
-                    }
-                  ]
-                }
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 3,
-              "w": 3,
-              "x": 3,
-              "y": 4
-            },
-            "id": 6,
-            "options": {
-              "colorMode": "value",
-              "graphMode": "area",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"avg1\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n",
-                "refId": "A"
-              }
-            ],
-            "title": "Load Avg (1m)",
-            "type": "stat"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "description": "Memory in use by Host OS, VM's and Containers",
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "decimals": 2,
-                "mappings": [],
-                "max": 64,
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "#EAB839",
-                      "value": 500
-                    },
-                    {
-                      "color": "red",
-                      "value": 800
-                    }
-                  ]
-                },
-                "unit": "gbytes"
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 3,
-              "w": 3,
-              "x": 6,
-              "y": 4
-            },
-            "id": 10,
-            "options": {
-              "colorMode": "value",
-              "graphMode": "none",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"memory\" and\n    r._field == \"memused\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |\u003e map(fn: (r) =\u003e ({\n        r with\n        _value: float(v: r._value) / 1073741824.0\n      })\n    )\n  |\u003e last()",
-                "refId": "A"
-              }
-            ],
-            "title": "Memory in Use",
-            "type": "stat"
-          },
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "fieldConfig": {
-              "defaults": {
-                "color": {
-                  "mode": "thresholds"
-                },
-                "decimals": 2,
-                "mappings": [],
-                "max": 1,
-                "min": 0,
-                "thresholds": {
-                  "mode": "absolute",
-                  "steps": [
-                    {
-                      "color": "green"
-                    },
-                    {
-                      "color": "#EAB839",
-                      "value": 0.5
-                    },
-                    {
-                      "color": "red",
-                      "value": 0.75
-                    }
-                  ]
-                },
-                "unit": "percentunit"
-              },
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 3,
-              "w": 3,
-              "x": 9,
-              "y": 4
-            },
-            "id": 12,
-            "options": {
-              "colorMode": "value",
-              "graphMode": "area",
-              "justifyMode": "auto",
-              "orientation": "auto",
-              "percentChangeColorMode": "standard",
-              "reduceOptions": {
-                "calcs": [
-                  "lastNotNull"
-                ],
-                "fields": "",
-                "values": false
-              },
-              "showPercentChange": false,
-              "text": {},
-              "textMode": "auto",
-              "wideLayout": true
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "influxdb",
-                  "uid": "feb85geg7yadcd"
-                },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"wait\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn:mean, createEmpty: false)",
-                "refId": "A"
-              }
-            ],
-            "title": "I/O Wait",
-            "type": "stat"
-          }
-        ],
+        "panels": [],
         "repeat": "server",
         "title": "Summary $server",
         "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [],
+            "max": 1,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 0.75
+                },
+                {
+                  "color": "red",
+                  "value": 0.8
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 3,
+          "x": 0,
+          "y": 1
+        },
+        "id": 2,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"cpu\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn: mean)",
+            "refId": "A"
+          }
+        ],
+        "title": "Server CPU",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 3,
+          "y": 1
+        },
+        "id": 4,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"cpus\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e limit(n:1)",
+            "refId": "A"
+          }
+        ],
+        "title": "Logical Cores",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 6,
+          "y": 1
+        },
+        "id": 8,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"memory\" and\n    r._field == \"memtotal\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e limit(n:1)",
+            "refId": "A"
+          }
+        ],
+        "title": "Total Memory",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "bytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 9,
+          "y": 1
+        },
+        "id": 9,
+        "options": {
+          "colorMode": "none",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"memory\" and\n    r._field == \"swaptotal\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e limit(n:1)",
+            "refId": "A"
+          }
+        ],
+        "title": "Swap Total",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "displayName": "${__field.labels.host} (${__field.labels.type})",
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 6,
+          "w": 12,
+          "x": 12,
+          "y": 1
+        },
+        "id": 14,
+        "options": {
+          "displayMode": "gradient",
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "maxVizHeight": 300,
+          "minVizHeight": 10,
+          "minVizWidth": 0,
+          "namePlacement": "auto",
+          "orientation": "horizontal",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true,
+          "sizing": "auto",
+          "text": {},
+          "valueMode": "color"
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e r._measurement == \"system\")\n  |\u003e filter(fn: (r) =\u003e r._field == \"avail\" or r._field == \"used\")\n  |\u003e filter(fn: (r) =\u003e r[\"nodename\"] == \"${server}\")\n  |\u003e last()\n  |\u003e pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\")\n  |\u003e map(fn: (r) =\u003e ({ r with \n    _time: r._time,\n    _measurement: r.measurement,\n    _field: \"used_perc\",\n    _value: float(v: 100) / (float(v: r.avail) + float(v: r.used)) * float(v:r.used)\n     }))\n  |\u003e drop(columns: [\"avail\",\"used\"])\n",
+            "refId": "A"
+          }
+        ],
+        "title": "Storage Pools",
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 3,
+          "y": 4
+        },
+        "id": 6,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"avg1\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n",
+            "refId": "A"
+          }
+        ],
+        "title": "Load Avg (1m)",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "description": "Memory in use by Host OS, VM's and Containers",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [],
+            "max": 64,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 500
+                },
+                {
+                  "color": "red",
+                  "value": 800
+                }
+              ]
+            },
+            "unit": "gbytes"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 6,
+          "y": 4
+        },
+        "id": 10,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"memory\" and\n    r._field == \"memused\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |\u003e map(fn: (r) =\u003e ({\n        r with\n        _value: float(v: r._value) / 1073741824.0\n      })\n    )\n  |\u003e last()",
+            "refId": "A"
+          }
+        ],
+        "title": "Memory in Use",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "feb85geg7yadcd"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 2,
+            "mappings": [],
+            "max": 1,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 0.5
+                },
+                {
+                  "color": "red",
+                  "value": 0.75
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 3,
+          "w": 3,
+          "x": 9,
+          "y": 4
+        },
+        "id": 12,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "text": {},
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop:v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e\n    r._measurement == \"cpustat\" and\n    r._field == \"wait\"\n  )\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"${server}\")\n  |\u003e aggregateWindow(every: v.windowPeriod, fn:mean, createEmpty: false)",
+            "refId": "A"
+          }
+        ],
+        "title": "I/O Wait",
+        "type": "stat"
       },
       {
         "collapsed": false,
@@ -1255,7 +1262,7 @@
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 7641
+              "y": 7653
             },
             "id": 16,
             "options": {
@@ -1366,7 +1373,7 @@
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 7641
+              "y": 7653
             },
             "id": 19,
             "options": {
@@ -1513,7 +1520,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 7648
+              "y": 7660
             },
             "id": 21,
             "options": {
@@ -1630,7 +1637,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 7648
+              "y": 7660
             },
             "id": 24,
             "options": {
@@ -1725,7 +1732,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7657
+              "y": 7669
             },
             "id": 26,
             "options": {
@@ -1821,7 +1828,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7657
+              "y": 7669
             },
             "id": 27,
             "options": {
@@ -1918,7 +1925,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7665
+              "y": 7677
             },
             "id": 28,
             "options": {
@@ -2013,7 +2020,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7665
+              "y": 7677
             },
             "id": 29,
             "options": {
@@ -2109,7 +2116,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7673
+              "y": 7685
             },
             "id": 30,
             "options": {
@@ -2208,7 +2215,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7673
+              "y": 7685
             },
             "id": 31,
             "options": {
@@ -2307,7 +2314,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7681
+              "y": 7693
             },
             "id": 32,
             "options": {
@@ -2403,7 +2410,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7681
+              "y": 7693
             },
             "id": 33,
             "options": {
@@ -2499,7 +2506,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7689
+              "y": 7701
             },
             "id": 34,
             "options": {
@@ -2595,7 +2602,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7689
+              "y": 7701
             },
             "id": 35,
             "options": {
@@ -2691,7 +2698,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7697
+              "y": 7709
             },
             "id": 36,
             "options": {
@@ -2787,7 +2794,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7697
+              "y": 7709
             },
             "id": 37,
             "options": {
@@ -2853,11 +2860,22 @@
             "type": "influxdb",
             "uid": "feb85geg7yadcd"
           },
-          "definition": "buckets()",
+          "definition": "buckets(influxdb-qa)",
           "includeAll": false,
           "name": "Bucket",
           "options": [],
-          "query": "buckets()",
+          "query": {
+            "0": "b",
+            "1": "u",
+            "2": "c",
+            "3": "k",
+            "4": "e",
+            "5": "t",
+            "6": "s",
+            "7": "(",
+            "8": ")",
+            "query": "buckets(influxdb-qa)"
+          },
           "refresh": 1,
           "regex": "",
           "type": "query"
