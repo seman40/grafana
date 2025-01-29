@@ -2879,7 +2879,9 @@
             "uid": "feb85geg7yadcd"
           },
           "definition": "from(bucket: \"${Bucket}\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e \r\n    r._measurement == \"system\" and\r\n    r.object == \"nodes\"\r\n  )\r\n  |\u003e keyValues(keyColumns: [\"host\"])\r\n  |\u003e group()\r\n  |\u003e keep(columns: [\"host\"])\r\n  |\u003e distinct(column: \"host\")",
+          "includeAll": false,
           "label": "server",
+          "multi": true,
           "name": "server",
           "options": [],
           "query": {
