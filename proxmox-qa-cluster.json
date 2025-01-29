@@ -1081,11 +1081,11 @@
               "type": "influxdb",
               "uid": "feb85geg7yadcd"
             },
-            "query": "from(bucket: \"ipmi-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-07\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-01\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pve-07 temperature",
+        "title": "pm-qa-01 temperature",
         "type": "timeseries"
       },
       {
@@ -1255,7 +1255,7 @@
               "h": 7,
               "w": 12,
               "x": 0,
-              "y": 7595
+              "y": 7629
             },
             "id": 16,
             "options": {
@@ -1366,7 +1366,7 @@
               "h": 7,
               "w": 12,
               "x": 12,
-              "y": 7595
+              "y": 7629
             },
             "id": 19,
             "options": {
@@ -1513,7 +1513,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 7602
+              "y": 7636
             },
             "id": 21,
             "options": {
@@ -1630,7 +1630,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 7602
+              "y": 7636
             },
             "id": 24,
             "options": {
@@ -1725,7 +1725,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7611
+              "y": 7645
             },
             "id": 26,
             "options": {
@@ -1821,7 +1821,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7611
+              "y": 7645
             },
             "id": 27,
             "options": {
@@ -1918,7 +1918,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7619
+              "y": 7653
             },
             "id": 28,
             "options": {
@@ -2013,7 +2013,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7619
+              "y": 7653
             },
             "id": 29,
             "options": {
@@ -2109,7 +2109,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7627
+              "y": 7661
             },
             "id": 30,
             "options": {
@@ -2208,7 +2208,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7627
+              "y": 7661
             },
             "id": 31,
             "options": {
@@ -2307,7 +2307,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7635
+              "y": 7669
             },
             "id": 32,
             "options": {
@@ -2403,7 +2403,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7635
+              "y": 7669
             },
             "id": 33,
             "options": {
@@ -2499,7 +2499,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7643
+              "y": 7677
             },
             "id": 34,
             "options": {
@@ -2595,7 +2595,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7643
+              "y": 7677
             },
             "id": 35,
             "options": {
@@ -2691,7 +2691,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7651
+              "y": 7685
             },
             "id": 36,
             "options": {
@@ -2787,7 +2787,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7651
+              "y": 7685
             },
             "id": 37,
             "options": {
