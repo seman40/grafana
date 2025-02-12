@@ -618,7 +618,7 @@
         "type": "stat"
       },
       {
-        "collapsed": false,
+        "collapsed": true,
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -626,575 +626,6 @@
           "y": 35
         },
         "id": 50,
-        "panels": [],
-        "title": "Temperature and power",
-        "type": "row"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "feb85geg7yadcd"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 36
-        },
-        "id": 51,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-03\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
-            "refId": "A"
-          }
-        ],
-        "title": "pm-03 temperature",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "feb85geg7yadcd"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 36
-        },
-        "id": 53,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-04\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
-            "refId": "A"
-          }
-        ],
-        "title": "pm-04 temperature",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "feb85geg7yadcd"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 44
-        },
-        "id": 54,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-05\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
-            "refId": "A"
-          }
-        ],
-        "title": "pm-05 temperature",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "feb85geg7yadcd"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 44
-        },
-        "id": 56,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-02\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
-            "refId": "A"
-          }
-        ],
-        "title": "pm-qa-02 temperature",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "feb85geg7yadcd"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 52
-        },
-        "id": 55,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "query": "from(bucket: \"ipmi-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-01\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
-            "refId": "A"
-          }
-        ],
-        "title": "pm-qa-01 temperature",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "feb85geg7yadcd"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green"
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 52
-        },
-        "id": 60,
-        "options": {
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "feb85geg7yadcd"
-            },
-            "query": "from(bucket: \"ipmi-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-01\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
-            "refId": "A"
-          }
-        ],
-        "title": "pm-qa-01 watts",
-        "type": "timeseries"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 60
-        },
-        "id": 49,
         "panels": [
           {
             "datasource": {
@@ -1204,76 +635,76 @@
             "fieldConfig": {
               "defaults": {
                 "color": {
-                  "mode": "thresholds"
+                  "mode": "palette-classic"
                 },
                 "custom": {
-                  "align": "auto",
-                  "cellOptions": {
-                    "type": "auto"
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
                   },
-                  "filterable": true,
-                  "inspect": false
+                  "insertNulls": false,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
                 },
                 "mappings": [],
                 "thresholds": {
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
                       "value": 80
                     }
                   ]
-                },
-                "unit": "none"
-              },
-              "overrides": [
-                {
-                  "matcher": {
-                    "id": "byName",
-                    "options": "Time"
-                  },
-                  "properties": [
-                    {
-                      "id": "unit",
-                      "value": "short"
-                    }
-                  ]
-                },
-                {
-                  "matcher": {
-                    "id": "byName",
-                    "options": "Uptime"
-                  },
-                  "properties": [
-                    {
-                      "id": "unit",
-                      "value": "dtdhms"
-                    }
-                  ]
                 }
-              ]
+              },
+              "overrides": []
             },
             "gridPos": {
-              "h": 7,
+              "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7715
+              "y": 36
             },
-            "id": 16,
+            "id": 51,
             "options": {
-              "cellHeight": "sm",
-              "footer": {
-                "countRows": false,
-                "fields": "",
-                "reducer": [
-                  "sum"
-                ],
-                "show": false
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
               },
-              "showHeader": true
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
             },
             "pluginVersion": "11.4.0",
             "targets": [
@@ -1282,30 +713,12 @@
                   "type": "influxdb",
                   "uid": "feb85geg7yadcd"
                 },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: -10m)\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"system\")\n  |\u003e filter(fn: (r) =\u003e r[\"_field\"] == \"uptime\")\n  |\u003e filter(fn: (r) =\u003e r[\"object\"] == \"qemu\")\n  |\u003e filter(fn: (r) =\u003e r[\"nodename\"] =~ /${server:regex}/)\n  |\u003e group(columns: [\"host\",\"nodename\"], mode: \"by\")\n  |\u003e filter(fn: (r) =\u003e r._value \u003e 0)\n  |\u003e last()\n  |\u003e limit(n:1)\n  |\u003e group(columns: [\"_measurement\"])\n  |\u003e keep(columns: [\"_time\",\"host\",\"nodename\",\"_value\"])\n  \n",
+                "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-03\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
                 "refId": "A"
               }
             ],
-            "title": "Running VMs",
-            "transformations": [
-              {
-                "id": "organize",
-                "options": {
-                  "excludeByName": {},
-                  "indexByName": {
-                    "_time": 0,
-                    "_value": 2,
-                    "host": 1
-                  },
-                  "renameByName": {
-                    "_time": "Time",
-                    "_value": "Uptime",
-                    "host": "VM"
-                  }
-                }
-              }
-            ],
-            "type": "table"
+            "title": "pm-03 temperature",
+            "type": "timeseries"
           },
           {
             "datasource": {
@@ -1315,76 +728,76 @@
             "fieldConfig": {
               "defaults": {
                 "color": {
-                  "mode": "thresholds"
+                  "mode": "palette-classic"
                 },
                 "custom": {
-                  "align": "auto",
-                  "cellOptions": {
-                    "type": "auto"
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
                   },
-                  "filterable": true,
-                  "inspect": false
+                  "insertNulls": false,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
                 },
                 "mappings": [],
                 "thresholds": {
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
                       "value": 80
                     }
                   ]
-                },
-                "unit": "none"
-              },
-              "overrides": [
-                {
-                  "matcher": {
-                    "id": "byName",
-                    "options": "Time"
-                  },
-                  "properties": [
-                    {
-                      "id": "unit",
-                      "value": "short"
-                    }
-                  ]
-                },
-                {
-                  "matcher": {
-                    "id": "byName",
-                    "options": "Uptime"
-                  },
-                  "properties": [
-                    {
-                      "id": "unit",
-                      "value": "dtdhms"
-                    }
-                  ]
                 }
-              ]
+              },
+              "overrides": []
             },
             "gridPos": {
-              "h": 7,
+              "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7715
+              "y": 36
             },
-            "id": 19,
+            "id": 53,
             "options": {
-              "cellHeight": "sm",
-              "footer": {
-                "countRows": false,
-                "fields": "",
-                "reducer": [
-                  "sum"
-                ],
-                "show": false
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
               },
-              "showHeader": true
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
             },
             "pluginVersion": "11.4.0",
             "targets": [
@@ -1393,33 +806,387 @@
                   "type": "influxdb",
                   "uid": "feb85geg7yadcd"
                 },
-                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: -10m)\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"system\")\n  |\u003e filter(fn: (r) =\u003e r[\"_field\"] == \"uptime\")\n  |\u003e filter(fn: (r) =\u003e r[\"object\"] == \"lxc\")\n  |\u003e filter(fn: (r) =\u003e r[\"nodename\"] =~ /${server:regex}/)\n  |\u003e group(columns: [\"host\",\"nodename\"], mode: \"by\")\n  |\u003e filter(fn: (r) =\u003e r._value \u003e 0)\n  |\u003e last()\n  |\u003e limit(n:1)\n  |\u003e group(columns: [\"_measurement\"])\n  |\u003e keep(columns: [\"_time\",\"host\",\"_value\"])\n  \n",
+                "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-04\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
                 "refId": "A"
               }
             ],
-            "title": "Running LXCs",
-            "transformations": [
-              {
-                "id": "organize",
-                "options": {
-                  "excludeByName": {},
-                  "indexByName": {
-                    "_time": 0,
-                    "_value": 2,
-                    "host": 1
+            "title": "pm-04 temperature",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
                   },
-                  "renameByName": {
-                    "_time": "Time",
-                    "_value": "Uptime",
-                    "host": "VM"
+                  "insertNulls": false,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
                   }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
                 }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 122
+            },
+            "id": 54,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "11.4.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "feb85geg7yadcd"
+                },
+                "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-05\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+                "refId": "A"
               }
             ],
-            "type": "table"
+            "title": "pm-05 temperature",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "insertNulls": false,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 122
+            },
+            "id": 56,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "11.4.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "feb85geg7yadcd"
+                },
+                "query": "from(bucket: \"temp-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"temp\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-02\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+                "refId": "A"
+              }
+            ],
+            "title": "pm-qa-02 temperature",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "insertNulls": false,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 130
+            },
+            "id": 55,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "11.4.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "feb85geg7yadcd"
+                },
+                "query": "from(bucket: \"ipmi-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-01\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"degrees_c\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+                "refId": "A"
+              }
+            ],
+            "title": "pm-qa-01 temperature",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "barWidthFactor": 0.6,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "insertNulls": false,
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 130
+            },
+            "id": 60,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "11.4.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "feb85geg7yadcd"
+                },
+                "query": "from(bucket: \"ipmi-qa\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-qa-01\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+                "refId": "A"
+              }
+            ],
+            "title": "pm-qa-01 watts",
+            "type": "timeseries"
           }
         ],
-        "title": "Cluster summary of Resources $server",
+        "title": "Temperature and power",
         "type": "row"
       },
       {
@@ -1428,7 +1195,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 61
+          "y": 36
         },
         "id": 23,
         "panels": [
@@ -1481,7 +1248,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -1518,7 +1286,7 @@
               "h": 9,
               "w": 12,
               "x": 0,
-              "y": 7722
+              "y": 38
             },
             "id": 21,
             "options": {
@@ -1619,7 +1387,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -1635,7 +1404,7 @@
               "h": 9,
               "w": 12,
               "x": 12,
-              "y": 7722
+              "y": 38
             },
             "id": 24,
             "options": {
@@ -1715,7 +1484,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -1730,7 +1500,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7731
+              "y": 47
             },
             "id": 26,
             "options": {
@@ -1810,7 +1580,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -1826,7 +1597,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7731
+              "y": 47
             },
             "id": 27,
             "options": {
@@ -1908,7 +1679,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -1923,7 +1695,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7739
+              "y": 55
             },
             "id": 28,
             "options": {
@@ -2002,7 +1774,8 @@
                   "mode": "absolute",
                   "steps": [
                     {
-                      "color": "green"
+                      "color": "green",
+                      "value": null
                     },
                     {
                       "color": "red",
@@ -2018,7 +1791,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7739
+              "y": 55
             },
             "id": 29,
             "options": {
@@ -2114,7 +1887,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7747
+              "y": 63
             },
             "id": 30,
             "options": {
@@ -2213,7 +1986,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7747
+              "y": 63
             },
             "id": 31,
             "options": {
@@ -2312,7 +2085,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7755
+              "y": 71
             },
             "id": 32,
             "options": {
@@ -2408,7 +2181,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7755
+              "y": 71
             },
             "id": 33,
             "options": {
@@ -2504,7 +2277,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7763
+              "y": 79
             },
             "id": 34,
             "options": {
@@ -2600,7 +2373,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7763
+              "y": 79
             },
             "id": 35,
             "options": {
@@ -2696,7 +2469,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 7771
+              "y": 87
             },
             "id": 36,
             "options": {
@@ -2792,7 +2565,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 7771
+              "y": 87
             },
             "id": 37,
             "options": {
@@ -2825,6 +2598,244 @@
           }
         ],
         "title": "Memory and CPU usage $server",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 37
+        },
+        "id": 49,
+        "panels": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "filterable": true,
+                  "inspect": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "none"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Time"
+                  },
+                  "properties": [
+                    {
+                      "id": "unit",
+                      "value": "short"
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Uptime"
+                  },
+                  "properties": [
+                    {
+                      "id": "unit",
+                      "value": "dtdhms"
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 0,
+              "y": 37
+            },
+            "id": 16,
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true
+            },
+            "pluginVersion": "11.4.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "feb85geg7yadcd"
+                },
+                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: -10m)\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"system\")\n  |\u003e filter(fn: (r) =\u003e r[\"_field\"] == \"uptime\")\n  |\u003e filter(fn: (r) =\u003e r[\"object\"] == \"qemu\")\n  |\u003e filter(fn: (r) =\u003e r[\"nodename\"] =~ /${server:regex}/)\n  |\u003e group(columns: [\"host\",\"nodename\"], mode: \"by\")\n  |\u003e filter(fn: (r) =\u003e r._value \u003e 0)\n  |\u003e last()\n  |\u003e limit(n:1)\n  |\u003e group(columns: [\"_measurement\"])\n  |\u003e keep(columns: [\"_time\",\"host\",\"nodename\",\"_value\"])\n  \n",
+                "refId": "A"
+              }
+            ],
+            "title": "Running VMs",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {},
+                  "indexByName": {
+                    "_time": 0,
+                    "_value": 2,
+                    "host": 1
+                  },
+                  "renameByName": {
+                    "_time": "Time",
+                    "_value": "Uptime",
+                    "host": "VM"
+                  }
+                }
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "feb85geg7yadcd"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "filterable": true,
+                  "inspect": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "none"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Time"
+                  },
+                  "properties": [
+                    {
+                      "id": "unit",
+                      "value": "short"
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "Uptime"
+                  },
+                  "properties": [
+                    {
+                      "id": "unit",
+                      "value": "dtdhms"
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 12,
+              "y": 37
+            },
+            "id": 19,
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true
+            },
+            "pluginVersion": "11.4.0",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "influxdb",
+                  "uid": "feb85geg7yadcd"
+                },
+                "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: -10m)\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"system\")\n  |\u003e filter(fn: (r) =\u003e r[\"_field\"] == \"uptime\")\n  |\u003e filter(fn: (r) =\u003e r[\"object\"] == \"lxc\")\n  |\u003e filter(fn: (r) =\u003e r[\"nodename\"] =~ /${server:regex}/)\n  |\u003e group(columns: [\"host\",\"nodename\"], mode: \"by\")\n  |\u003e filter(fn: (r) =\u003e r._value \u003e 0)\n  |\u003e last()\n  |\u003e limit(n:1)\n  |\u003e group(columns: [\"_measurement\"])\n  |\u003e keep(columns: [\"_time\",\"host\",\"_value\"])\n  \n",
+                "refId": "A"
+              }
+            ],
+            "title": "Running LXCs",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {},
+                  "indexByName": {
+                    "_time": 0,
+                    "_value": 2,
+                    "host": 1
+                  },
+                  "renameByName": {
+                    "_time": "Time",
+                    "_value": "Uptime",
+                    "host": "VM"
+                  }
+                }
+              }
+            ],
+            "type": "table"
+          }
+        ],
+        "title": "Cluster summary of Resources $server",
         "type": "row"
       }
     ],
