@@ -789,11 +789,11 @@
             "custom": {
               "align": "center",
               "cellOptions": {
-                "type": "auto",
+                "type": "color-text",
                 "wrapText": false
               },
               "filterable": false,
-              "inspect": false
+              "inspect": true
             },
             "mappings": [],
             "thresholds": {
