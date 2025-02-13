@@ -793,7 +793,7 @@
                 "wrapText": false
               },
               "filterable": false,
-              "inspect": true
+              "inspect": false
             },
             "mappings": [],
             "thresholds": {
