@@ -987,8 +987,7 @@
                 "wrapText": false
               },
               "filterable": false,
-              "inspect": false,
-              "minWidth": 100
+              "inspect": false
             },
             "mappings": [],
             "thresholds": {
@@ -1049,6 +1048,19 @@
           }
         ],
         "title": "TLS version",
+        "transformations": [
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "instance",
+                  "version"
+                ]
+              }
+            }
+          }
+        ],
         "type": "table"
       },
       {
