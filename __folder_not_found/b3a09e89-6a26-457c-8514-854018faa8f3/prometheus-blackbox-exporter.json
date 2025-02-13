@@ -779,6 +779,7 @@
       },
       {
         "datasource": {
+          "type": "prometheus",
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
@@ -786,88 +787,88 @@
             "color": {
               "mode": "thresholds"
             },
-            "custom": {
-              "align": "center",
-              "cellOptions": {
-                "type": "color-text",
-                "wrapText": false
-              },
-              "filterable": false,
-              "inspect": false
-            },
-            "mappings": [],
+            "decimals": 2,
+            "mappings": [
+              {
+                "options": {
+                  "match": "null",
+                  "result": {
+                    "text": "N/A"
+                  }
+                },
+                "type": "special"
+              }
+            ],
             "thresholds": {
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
+                  "color": "dark-green",
                   "value": null
                 },
                 {
+                  "color": "orange",
+                  "value": 0.025
+                },
+                {
                   "color": "red",
-                  "value": 80
+                  "value": 0.05
                 }
               ]
-            }
+            },
+            "unit": "s"
           },
           "overrides": []
         },
         "gridPos": {
-          "h": 11,
+          "h": 10,
           "w": 5,
           "x": 14,
           "y": 23
         },
-        "id": 29,
+        "id": 24,
         "maxDataPoints": 100,
         "options": {
-          "cellHeight": "sm",
-          "footer": {
-            "countRows": false,
-            "enablePagination": false,
-            "fields": "",
-            "reducer": [
-              "sum"
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
             ],
-            "show": false
+            "fields": "",
+            "values": false
           },
-          "frameIndex": 0,
-          "showHeader": false,
-          "sortBy": [
-            {
-              "desc": false,
-              "displayName": "job"
-            }
-          ]
+          "showPercentChange": false,
+          "text": {
+            "titleSize": 12,
+            "valueSize": 12
+          },
+          "textMode": "auto",
+          "wideLayout": true
         },
         "pluginVersion": "11.4.0",
         "targets": [
           {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
             "editorMode": "code",
-            "exemplar": false,
-            "expr": "probe_tls_version_info{target=~\"$target\"}",
-            "format": "table",
-            "instant": true,
-            "legendFormat": "{{instance}}-{{version}}",
-            "range": false,
+            "exemplar": true,
+            "expr": "probe_dns_lookup_time_seconds{target=~\"$target\"}",
+            "format": "time_series",
+            "interval": "$interval",
+            "intervalFactor": 1,
+            "legendFormat": "{{instance}}",
+            "range": true,
             "refId": "A"
           }
         ],
-        "title": "TLS version",
-        "transformations": [
-          {
-            "id": "filterFieldsByName",
-            "options": {
-              "include": {
-                "names": [
-                  "instance",
-                  "version"
-                ]
-              }
-            }
-          }
-        ],
-        "type": "table"
+        "title": "Average DNS Lookup",
+        "type": "stat"
       },
       {
         "datasource": {
@@ -972,6 +973,98 @@
       },
       {
         "datasource": {
+          "uid": "Llmbz5f4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "center",
+              "cellOptions": {
+                "type": "color-text",
+                "wrapText": false
+              },
+              "filterable": false,
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 11,
+          "w": 10,
+          "x": 0,
+          "y": 33
+        },
+        "id": 29,
+        "maxDataPoints": 100,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "enablePagination": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "frameIndex": 0,
+          "showHeader": false,
+          "sortBy": [
+            {
+              "desc": false,
+              "displayName": "job"
+            }
+          ]
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "probe_tls_version_info{target=~\"$target\"}",
+            "format": "table",
+            "instant": true,
+            "legendFormat": "{{instance}}-{{version}}",
+            "range": false,
+            "refId": "A"
+          }
+        ],
+        "title": "TLS version",
+        "transformations": [
+          {
+            "id": "filterFieldsByName",
+            "options": {
+              "include": {
+                "names": [
+                  "instance",
+                  "version"
+                ]
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
           "type": "prometheus",
           "uid": "Llmbz5f4z"
         },
@@ -1015,7 +1108,7 @@
         "gridPos": {
           "h": 6,
           "w": 4,
-          "x": 1,
+          "x": 10,
           "y": 33
         },
         "id": 23,
@@ -1060,99 +1153,6 @@
           }
         ],
         "title": "Average Probe Duration",
-        "type": "stat"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "decimals": 2,
-            "mappings": [
-              {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
-              }
-            ],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "dark-green",
-                  "value": null
-                },
-                {
-                  "color": "orange",
-                  "value": 0.025
-                },
-                {
-                  "color": "red",
-                  "value": 0.05
-                }
-              ]
-            },
-            "unit": "s"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 9,
-          "w": 5,
-          "x": 19,
-          "y": 37
-        },
-        "id": 24,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "none",
-          "justifyMode": "auto",
-          "orientation": "horizontal",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "mean"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "text": {
-            "titleSize": 12,
-            "valueSize": 12
-          },
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "11.4.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
-            "editorMode": "code",
-            "exemplar": true,
-            "expr": "probe_dns_lookup_time_seconds{target=~\"$target\"}",
-            "format": "time_series",
-            "interval": "$interval",
-            "intervalFactor": 1,
-            "legendFormat": "{{instance}}",
-            "range": true,
-            "refId": "A"
-          }
-        ],
-        "title": "Average DNS Lookup",
         "type": "stat"
       }
     ],
