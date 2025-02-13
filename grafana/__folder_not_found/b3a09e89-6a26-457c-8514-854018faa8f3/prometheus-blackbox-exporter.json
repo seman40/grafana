@@ -442,32 +442,7 @@
             },
             "unit": "s"
           },
-          "overrides": [
-            {
-              "__systemRef": "hideSeriesFrom",
-              "matcher": {
-                "id": "byNames",
-                "options": {
-                  "mode": "exclude",
-                  "names": [
-                    "https://confluence.elcom.local"
-                  ],
-                  "prefix": "All except:",
-                  "readOnly": true
-                }
-              },
-              "properties": [
-                {
-                  "id": "custom.hideFrom",
-                  "value": {
-                    "legend": false,
-                    "tooltip": false,
-                    "viz": true
-                  }
-                }
-              ]
-            }
-          ]
+          "overrides": []
         },
         "gridPos": {
           "h": 11,
@@ -1013,7 +988,7 @@
               },
               "filterable": false,
               "inspect": false,
-              "minWidth": 50
+              "minWidth": 100
             },
             "mappings": [],
             "thresholds": {
@@ -1039,6 +1014,7 @@
           "y": 33
         },
         "id": 29,
+        "maxDataPoints": 100,
         "options": {
           "cellHeight": "sm",
           "footer": {
@@ -1063,10 +1039,12 @@
         "targets": [
           {
             "editorMode": "code",
+            "exemplar": false,
             "expr": "probe_tls_version_info{target=~\"$target\"}",
             "format": "table",
+            "instant": true,
             "legendFormat": "{{instance}}-{{version}}",
-            "range": true,
+            "range": false,
             "refId": "A"
           }
         ],
