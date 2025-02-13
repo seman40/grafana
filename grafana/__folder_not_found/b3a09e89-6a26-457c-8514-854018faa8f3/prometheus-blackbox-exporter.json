@@ -1051,7 +1051,7 @@
             "show": false
           },
           "frameIndex": 2,
-          "showHeader": false,
+          "showHeader": true,
           "sortBy": [
             {
               "desc": false,
@@ -1062,6 +1062,13 @@
         "pluginVersion": "11.4.0",
         "targets": [
           {
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "probe_tls_version_info{target=~\"$target\"}",
+            "format": "table",
+            "instant": false,
+            "legendFormat": "{{intance}} - {{ version ))",
+            "range": true,
             "refId": "A"
           }
         ],
