@@ -1006,7 +1006,7 @@
               "mode": "thresholds"
             },
             "custom": {
-              "align": "right",
+              "align": "auto",
               "cellOptions": {
                 "type": "auto",
                 "wrapText": false
@@ -1034,7 +1034,7 @@
         },
         "gridPos": {
           "h": 6,
-          "w": 4,
+          "w": 8,
           "x": 2,
           "y": 33
         },
@@ -1050,8 +1050,8 @@
             ],
             "show": false
           },
-          "frameIndex": 2,
-          "showHeader": true,
+          "frameIndex": 0,
+          "showHeader": false,
           "sortBy": [
             {
               "desc": false,
@@ -1063,11 +1063,9 @@
         "targets": [
           {
             "editorMode": "code",
-            "exemplar": false,
-            "expr": "probe_tls_version_info{target=~\"$target\"}",
+            "expr": "probe_tls_version_info",
             "format": "table",
-            "instant": false,
-            "legendFormat": "{{intance}} - {{ version ))",
+            "legendFormat": "{{instance}}-{{version}}",
             "range": true,
             "refId": "A"
           }
