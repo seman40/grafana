@@ -1063,7 +1063,7 @@
         "targets": [
           {
             "editorMode": "code",
-            "expr": "probe_tls_version_info",
+            "expr": "probe_tls_version_info{target=~\"$target\"}",
             "format": "table",
             "legendFormat": "{{instance}}-{{version}}",
             "range": true,
