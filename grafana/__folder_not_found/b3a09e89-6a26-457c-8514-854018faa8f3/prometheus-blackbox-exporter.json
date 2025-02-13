@@ -1290,6 +1290,14 @@
           "regex": "",
           "sort": 1,
           "type": "query"
+        },
+        {
+          "datasource": {
+            "uid": "Llmbz5f4z"
+          },
+          "filters": [],
+          "name": "Filters",
+          "type": "adhoc"
         }
       ]
     },
