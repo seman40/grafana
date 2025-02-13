@@ -509,29 +509,33 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
+                  "color": "dark-green",
                   "value": null
                 },
                 {
+                  "color": "orange",
+                  "value": 0.2
+                },
+                {
                   "color": "red",
-                  "value": 80
+                  "value": 0.5
                 }
               ]
             },
-            "unit": "none"
+            "unit": "s"
           },
           "overrides": []
         },
         "gridPos": {
-          "h": 12,
+          "h": 11,
           "w": 5,
           "x": 14,
           "y": 11
         },
-        "id": 27,
+        "id": 23,
         "maxDataPoints": 100,
         "options": {
-          "colorMode": "none",
+          "colorMode": "value",
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
@@ -558,16 +562,18 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
+            "editorMode": "code",
             "exemplar": true,
-            "expr": "probe_http_version{target=~\"$target\"}",
+            "expr": "avg(probe_duration_seconds{target=~\"$target\"}) by (instance)",
             "format": "time_series",
-            "interval": "",
+            "interval": "$interval",
             "intervalFactor": 1,
-            "legendFormat": "{{instance}}",
+            "legendFormat": "{{instance}} ",
+            "range": true,
             "refId": "A"
           }
         ],
-        "title": "HTTP Version",
+        "title": "Average Probe Duration",
         "type": "stat"
       },
       {
@@ -787,7 +793,6 @@
             "color": {
               "mode": "thresholds"
             },
-            "decimals": 2,
             "mappings": [
               {
                 "options": {
@@ -803,40 +808,36 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "dark-green",
+                  "color": "green",
                   "value": null
                 },
                 {
-                  "color": "orange",
-                  "value": 0.025
-                },
-                {
                   "color": "red",
-                  "value": 0.05
+                  "value": 80
                 }
               ]
             },
-            "unit": "s"
+            "unit": "none"
           },
           "overrides": []
         },
         "gridPos": {
-          "h": 10,
+          "h": 12,
           "w": 5,
           "x": 14,
-          "y": 23
+          "y": 22
         },
-        "id": 24,
+        "id": 27,
         "maxDataPoints": 100,
         "options": {
-          "colorMode": "value",
+          "colorMode": "none",
           "graphMode": "none",
           "justifyMode": "auto",
           "orientation": "horizontal",
           "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
-              "mean"
+              "lastNotNull"
             ],
             "fields": "",
             "values": false
@@ -856,18 +857,16 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
-            "editorMode": "code",
             "exemplar": true,
-            "expr": "probe_dns_lookup_time_seconds{target=~\"$target\"}",
+            "expr": "probe_http_version{target=~\"$target\"}",
             "format": "time_series",
-            "interval": "$interval",
+            "interval": "",
             "intervalFactor": 1,
             "legendFormat": "{{instance}}",
-            "range": true,
             "refId": "A"
           }
         ],
-        "title": "Average DNS Lookup",
+        "title": "HTTP Version",
         "type": "stat"
       },
       {
@@ -1008,7 +1007,7 @@
         },
         "gridPos": {
           "h": 11,
-          "w": 10,
+          "w": 9,
           "x": 0,
           "y": 33
         },
@@ -1073,6 +1072,7 @@
             "color": {
               "mode": "thresholds"
             },
+            "decimals": 2,
             "mappings": [
               {
                 "options": {
@@ -1093,11 +1093,11 @@
                 },
                 {
                   "color": "orange",
-                  "value": 0.2
+                  "value": 0.025
                 },
                 {
                   "color": "red",
-                  "value": 0.5
+                  "value": 0.05
                 }
               ]
             },
@@ -1106,12 +1106,12 @@
           "overrides": []
         },
         "gridPos": {
-          "h": 6,
-          "w": 4,
-          "x": 10,
+          "h": 11,
+          "w": 5,
+          "x": 9,
           "y": 33
         },
-        "id": 23,
+        "id": 24,
         "maxDataPoints": 100,
         "options": {
           "colorMode": "value",
@@ -1121,7 +1121,7 @@
           "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
-              "lastNotNull"
+              "mean"
             ],
             "fields": "",
             "values": false
@@ -1143,16 +1143,16 @@
             },
             "editorMode": "code",
             "exemplar": true,
-            "expr": "avg(probe_duration_seconds{target=~\"$target\"}) by (instance)",
+            "expr": "probe_dns_lookup_time_seconds{target=~\"$target\"}",
             "format": "time_series",
             "interval": "$interval",
             "intervalFactor": 1,
-            "legendFormat": "{{instance}} ",
+            "legendFormat": "{{instance}}",
             "range": true,
             "refId": "A"
           }
         ],
-        "title": "Average Probe Duration",
+        "title": "Average DNS Lookup",
         "type": "stat"
       }
     ],
