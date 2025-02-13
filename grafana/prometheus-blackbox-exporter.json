@@ -787,10 +787,10 @@
               "mode": "thresholds"
             },
             "custom": {
-              "align": "right",
+              "align": "center",
               "cellOptions": {
                 "type": "auto",
-                "wrapText": true
+                "wrapText": false
               },
               "filterable": false,
               "inspect": false
