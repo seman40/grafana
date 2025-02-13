@@ -1143,7 +1143,7 @@
             },
             "editorMode": "code",
             "exemplar": true,
-            "expr": "avg(probe_duration_seconds{target=~\"$target\"}) by (target)",
+            "expr": "avg(probe_duration_seconds{target=~\"$target\"}) by (instance)",
             "format": "time_series",
             "interval": "$interval",
             "intervalFactor": 1,
@@ -1292,6 +1292,7 @@
           "type": "query"
         },
         {
+          "baseFilters": [],
           "datasource": {
             "uid": "Llmbz5f4z"
           },
