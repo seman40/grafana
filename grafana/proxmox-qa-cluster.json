@@ -108,7 +108,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -174,7 +174,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -242,7 +242,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -310,7 +310,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -387,7 +387,7 @@
           "text": {},
           "valueMode": "color"
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -455,7 +455,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -529,7 +529,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -603,7 +603,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -690,7 +690,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 64
+              "y": 92
             },
             "id": 51,
             "options": {
@@ -782,7 +782,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 64
+              "y": 92
             },
             "id": 53,
             "options": {
@@ -874,7 +874,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 285
+              "y": 313
             },
             "id": 54,
             "options": {
@@ -966,7 +966,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 285
+              "y": 313
             },
             "id": 56,
             "options": {
@@ -1058,7 +1058,7 @@
               "h": 8,
               "w": 12,
               "x": 0,
-              "y": 293
+              "y": 321
             },
             "id": 55,
             "options": {
@@ -1150,7 +1150,7 @@
               "h": 8,
               "w": 12,
               "x": 12,
-              "y": 293
+              "y": 321
             },
             "id": 60,
             "options": {
@@ -1296,11 +1296,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1414,11 +1415,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1510,11 +1512,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1609,11 +1612,12 @@
             "sortDesc": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "11.4.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -2153,8 +2157,8 @@
       "list": [
         {
           "current": {
-            "text": "chromaweb-flux-telegraf",
-            "value": "chromaweb-flux-telegraf"
+            "text": "influxdb-qa",
+            "value": "feb85geg7yadcd"
           },
           "description": "Fluxlang Capable Datasouce",
           "includeAll": false,
@@ -2185,8 +2189,12 @@
         },
         {
           "current": {
-            "text": "pm-03",
-            "value": "pm-03"
+            "text": [
+              "All"
+            ],
+            "value": [
+              "$__all"
+            ]
           },
           "datasource": {
             "type": "influxdb",
