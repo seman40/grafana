@@ -30,7 +30,6 @@
     "description": "Dashboard for JVM metrics with Prometheus / JMX Exporter",
     "editable": true,
     "fiscalYearStartMonth": 0,
-    "gnetId": 3066,
     "graphTooltip": 0,
     "links": [
       {
@@ -53,14 +52,9 @@
         "url": "https://confluence.elcom.local/admin/console.action"
       }
     ],
-    "liveNow": false,
     "panels": [
       {
         "collapsed": false,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -69,59 +63,10 @@
         },
         "id": 36,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Alerts",
         "type": "row"
       },
       {
-        "alert": {
-          "alertRuleTags": {},
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  2
-                ],
-                "type": "lt"
-              },
-              "operator": {
-                "type": "and"
-              },
-              "query": {
-                "params": [
-                  "A",
-                  "10m",
-                  "now"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "last"
-              },
-              "type": "query"
-            }
-          ],
-          "executionErrorState": "alerting",
-          "for": "1m",
-          "frequency": "1h",
-          "handler": 1,
-          "message": "Confluence license is almost end.",
-          "name": "Confluence license expiration alert",
-          "noDataState": "alerting",
-          "notifications": [
-            {
-              "uid": "sbLc8g5Gk"
-            }
-          ]
-        },
         "datasource": {
           "default": false,
           "type": "prometheus",
@@ -215,11 +160,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -240,52 +186,12 @@
         "type": "timeseries"
       },
       {
-        "alert": {
-          "alertRuleTags": {},
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  98
-                ],
-                "type": "gt"
-              },
-              "operator": {
-                "type": "and"
-              },
-              "query": {
-                "params": [
-                  "A",
-                  "5m",
-                  "now"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "max"
-              },
-              "type": "query"
-            }
-          ],
-          "executionErrorState": "alerting",
-          "for": "5m",
-          "frequency": "1m",
-          "handler": 1,
-          "message": "Cofluence is on critial free disk space, make something!!",
-          "name": "Confluence Disk Space Used (98%) alert",
-          "noDataState": "no_data",
-          "notifications": [
-            {
-              "uid": "sbLc8g5Gk"
-            }
-          ]
-        },
         "datasource": {
           "default": false,
           "type": "prometheus",
           "uid": "Llmbz5f4z"
         },
-        "description": "192.168.0.120",
+        "description": "192.168.0.36",
         "fieldConfig": {
           "defaults": {
             "color": {
@@ -349,7 +255,6 @@
           "y": 1
         },
         "id": 34,
-        "interval": "",
         "options": {
           "legend": {
             "calcs": [],
@@ -358,11 +263,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -381,46 +287,6 @@
         "type": "timeseries"
       },
       {
-        "alert": {
-          "alertRuleTags": {},
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  95
-                ],
-                "type": "gt"
-              },
-              "operator": {
-                "type": "and"
-              },
-              "query": {
-                "params": [
-                  "A",
-                  "1m",
-                  "now"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "max"
-              },
-              "type": "query"
-            }
-          ],
-          "executionErrorState": "alerting",
-          "for": "3m",
-          "frequency": "20s",
-          "handler": 1,
-          "message": "Confluence is about to die (some health checks failed)",
-          "name": "Confluence Free Disk Space Alert",
-          "noDataState": "alerting",
-          "notifications": [
-            {
-              "uid": "sbLc8g5Gk"
-            }
-          ]
-        },
         "datasource": {
           "default": false,
           "type": "prometheus",
@@ -490,7 +356,6 @@
           "y": 1
         },
         "id": 31,
-        "interval": "",
         "options": {
           "legend": {
             "calcs": [],
@@ -499,11 +364,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -523,10 +389,6 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -535,15 +397,6 @@
         },
         "id": 25,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "JVM",
         "type": "row"
       },
@@ -628,11 +481,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -728,11 +582,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -836,11 +691,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -933,11 +789,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -957,10 +814,6 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -969,15 +822,6 @@
         },
         "id": 26,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Events",
         "type": "row"
       },
@@ -1060,11 +904,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1170,11 +1015,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1193,10 +1039,6 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1205,15 +1047,6 @@
         },
         "id": 27,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Duration",
         "type": "row"
       },
@@ -1336,11 +1169,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1360,10 +1194,6 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1372,15 +1202,6 @@
         },
         "id": 28,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Common Stats",
         "type": "row"
       },
@@ -1446,7 +1267,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1527,7 +1348,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1608,7 +1429,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1689,7 +1510,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1770,7 +1591,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1851,7 +1672,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1872,10 +1693,6 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1884,15 +1701,6 @@
         },
         "id": 29,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "datasource",
-              "uid": "grafana"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Users",
         "type": "row"
       },
@@ -1958,7 +1766,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -2043,7 +1851,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -2124,7 +1932,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -2205,7 +2013,7 @@
           "textMode": "auto",
           "wideLayout": true
         },
-        "pluginVersion": "11.2.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -2225,8 +2033,9 @@
         "type": "stat"
       }
     ],
-    "refresh": false,
-    "schemaVersion": 39,
+    "preload": false,
+    "refresh": "",
+    "schemaVersion": 40,
     "tags": [
       "JVM",
       "prometheus",
@@ -2236,34 +2045,10 @@
       "list": []
     },
     "time": {
-      "from": "now-24h",
+      "from": "now-1h",
       "to": "now"
     },
-    "timepicker": {
-      "refresh_intervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
-      ]
-    },
+    "timepicker": {},
     "timezone": "",
     "title": "Confluence",
     "weekStart": ""
