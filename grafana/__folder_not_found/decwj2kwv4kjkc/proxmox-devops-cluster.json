@@ -1187,11 +1187,11 @@
               "type": "influxdb",
               "uid": "adyu2hcj87m68e"
             },
-            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pve-05\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
+            "query": "from(bucket: \"ipmi\")\r\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"ipmi_sensor\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"host\"] == \"pm-do-03\")\r\n  |\u003e filter(fn: (r) =\u003e r[\"unit\"] == \"watts\")\r\n  |\u003e drop(columns: [\"status_code\",\"entity_id\",\"unit\",\"host\"])",
             "refId": "A"
           }
         ],
-        "title": "pve-05 watts",
+        "title": "pm-do-03 watts",
         "type": "timeseries"
       },
       {
