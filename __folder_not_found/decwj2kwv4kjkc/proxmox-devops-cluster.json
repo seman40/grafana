@@ -1097,7 +1097,7 @@
             "refId": "A"
           }
         ],
-        "title": "pve-05 temperature",
+        "title": "pm-do-03 temperature",
         "type": "timeseries"
       },
       {
