@@ -30,17 +30,12 @@
     "description": "Proxmox Dashboard complete written in Flux with multiple server option for Cluster use. Original Dashboard has been taken from @mephisto and then there was modified some graphs.",
     "editable": true,
     "fiscalYearStartMonth": 0,
-    "gnetId": 19119,
     "graphTooltip": 0,
     "links": [],
     "liveNow": true,
     "panels": [
       {
         "collapsed": false,
-        "datasource": {
-          "type": "tribe-29-checkmk-datasource",
-          "uid": "ZwCYqT1Vz"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -49,15 +44,6 @@
         },
         "id": 18,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "tribe-29-checkmk-datasource",
-              "uid": "ZwCYqT1Vz"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Nodes Summary",
         "type": "row"
       },
@@ -96,8 +82,16 @@
         "id": 59,
         "options": {
           "displayMode": "gradient",
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "maxVizHeight": 300,
           "minVizHeight": 10,
           "minVizWidth": 0,
+          "namePlacement": "auto",
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -107,12 +101,13 @@
             "values": false
           },
           "showUnfilled": true,
+          "sizing": "auto",
           "text": {
             "titleSize": 12
           },
           "valueMode": "color"
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -185,6 +180,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "lastNotNull"
@@ -192,9 +188,11 @@
             "fields": "",
             "values": false
           },
-          "textMode": "value"
+          "showPercentChange": false,
+          "textMode": "value",
+          "wideLayout": true
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -267,6 +265,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "lastNotNull"
@@ -274,12 +273,14 @@
             "fields": "",
             "values": false
           },
+          "showPercentChange": false,
           "text": {
             "titleSize": 12
           },
-          "textMode": "value"
+          "textMode": "value",
+          "wideLayout": true
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -352,6 +353,7 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "horizontal",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
             "calcs": [
               "lastNotNull"
@@ -359,9 +361,11 @@
             "fields": "",
             "values": false
           },
-          "textMode": "value"
+          "showPercentChange": false,
+          "textMode": "value",
+          "wideLayout": true
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -423,8 +427,16 @@
         "id": 60,
         "options": {
           "displayMode": "gradient",
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "maxVizHeight": 300,
           "minVizHeight": 10,
           "minVizWidth": 0,
+          "namePlacement": "auto",
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -434,12 +446,13 @@
             "values": false
           },
           "showUnfilled": true,
+          "sizing": "auto",
           "text": {
             "titleSize": 12
           },
           "valueMode": "color"
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -509,8 +522,16 @@
         "id": 61,
         "options": {
           "displayMode": "gradient",
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "maxVizHeight": 300,
           "minVizHeight": 10,
           "minVizWidth": 0,
+          "namePlacement": "auto",
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -520,12 +541,13 @@
             "values": false
           },
           "showUnfilled": true,
+          "sizing": "auto",
           "text": {
             "titleSize": 12
           },
           "valueMode": "color"
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -563,11 +585,13 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 10,
               "gradientMode": "none",
@@ -576,6 +600,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "smooth",
               "lineWidth": 1,
               "pointSize": 5,
@@ -649,11 +674,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.5",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -689,11 +715,13 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 10,
               "gradientMode": "none",
@@ -702,6 +730,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "smooth",
               "lineWidth": 1,
               "pointSize": 5,
@@ -754,11 +783,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
-        "pluginVersion": "9.4.7",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -795,11 +825,13 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 10,
               "gradientMode": "hue",
@@ -808,6 +840,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "smooth",
               "lineStyle": {
                 "fill": "solid"
@@ -862,11 +895,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
-        "pluginVersion": "8.2.5",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -904,6 +938,7 @@
               "mode": "thresholds"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisGridShow": true,
@@ -916,7 +951,7 @@
                 "tooltip": false,
                 "viz": false
               },
-              "lineWidth": 1,
+              "lineWidth": 0,
               "scaleDistribution": {
                 "log": 10,
                 "type": "log"
@@ -979,14 +1014,16 @@
           "showValue": "never",
           "stacking": "none",
           "tooltip": {
+            "hideZeros": false,
+            "maxWidth": 300,
             "mode": "multi",
             "sort": "none"
           },
           "xField": "host",
-          "xTickLabelRotation": 45,
+          "xTickLabelRotation": -90,
           "xTickLabelSpacing": 0
         },
-        "pluginVersion": "9.4.7",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1025,6 +1062,7 @@
               "mode": "thresholds"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisGridShow": true,
@@ -1100,6 +1138,7 @@
           "showValue": "never",
           "stacking": "none",
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "none"
           },
@@ -1107,7 +1146,7 @@
           "xTickLabelRotation": 45,
           "xTickLabelSpacing": 0
         },
-        "pluginVersion": "9.4.7",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1137,10 +1176,6 @@
       },
       {
         "collapsed": false,
-        "datasource": {
-          "type": "tribe-29-checkmk-datasource",
-          "uid": "ZwCYqT1Vz"
-        },
         "gridPos": {
           "h": 1,
           "w": 24,
@@ -1149,15 +1184,6 @@
         },
         "id": 23,
         "panels": [],
-        "targets": [
-          {
-            "datasource": {
-              "type": "tribe-29-checkmk-datasource",
-              "uid": "ZwCYqT1Vz"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Memory, CPU \u0026 Storage usage",
         "type": "row"
       },
@@ -1205,8 +1231,16 @@
         "id": 40,
         "options": {
           "displayMode": "gradient",
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "maxVizHeight": 300,
           "minVizHeight": 10,
           "minVizWidth": 0,
+          "namePlacement": "auto",
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -1216,10 +1250,11 @@
             "values": false
           },
           "showUnfilled": true,
+          "sizing": "auto",
           "text": {},
           "valueMode": "color"
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1280,8 +1315,16 @@
         "id": 14,
         "options": {
           "displayMode": "gradient",
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "maxVizHeight": 300,
           "minVizHeight": 10,
           "minVizWidth": 0,
+          "namePlacement": "auto",
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -1291,12 +1334,13 @@
             "values": false
           },
           "showUnfilled": true,
+          "sizing": "auto",
           "text": {
             "titleSize": 11
           },
           "valueMode": "color"
         },
-        "pluginVersion": "9.5.3",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1309,7 +1353,6 @@
           }
         ],
         "title": "Local Storage Pools",
-        "transformations": [],
         "transparent": true,
         "type": "bargauge"
       },
@@ -1324,11 +1367,13 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 0,
               "gradientMode": "none",
@@ -1337,6 +1382,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "linear",
               "lineWidth": 1,
               "pointSize": 5,
@@ -1390,10 +1436,12 @@
             "sortDesc": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1406,7 +1454,6 @@
           }
         ],
         "title": "LXC Disk usage",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -1420,11 +1467,13 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 0,
               "gradientMode": "none",
@@ -1433,6 +1482,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "linear",
               "lineWidth": 1,
               "pointSize": 5,
@@ -1485,10 +1535,12 @@
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1500,7 +1552,6 @@
           }
         ],
         "title": "VM CPU usage",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -1514,11 +1565,13 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 0,
               "gradientMode": "none",
@@ -1527,6 +1580,7 @@
                 "tooltip": false,
                 "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "smooth",
               "lineStyle": {
                 "fill": "solid"
@@ -1584,10 +1638,12 @@
             "sortDesc": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -1599,7 +1655,6 @@
           }
         ],
         "title": "LXC CPU usage",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -1647,8 +1702,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -1693,7 +1747,6 @@
           }
         ],
         "title": "VM RAM usage",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -1741,8 +1794,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -1786,7 +1838,6 @@
           }
         ],
         "title": "LXC RAM usage",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -1848,8 +1899,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -1893,7 +1943,6 @@
           }
         ],
         "title": "VM I/O Read",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -1942,8 +1991,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -1987,7 +2035,6 @@
           }
         ],
         "title": "LXC I/O Read",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -2036,8 +2083,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2081,7 +2127,6 @@
           }
         ],
         "title": "VMs I/O Write",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -2130,8 +2175,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2175,7 +2219,6 @@
           }
         ],
         "title": "LXC I/O Write",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -2224,8 +2267,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2269,7 +2311,6 @@
           }
         ],
         "title": "VM traffic In",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -2318,8 +2359,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2363,7 +2403,6 @@
           }
         ],
         "title": "LXC traffic In",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -2412,8 +2451,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2457,7 +2495,6 @@
           }
         ],
         "title": "VM traffic out",
-        "transformations": [],
         "type": "timeseries"
       },
       {
@@ -2506,8 +2543,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -2551,14 +2587,12 @@
           }
         ],
         "title": "LXC traffic out",
-        "transformations": [],
         "type": "timeseries"
       }
     ],
+    "preload": false,
     "refresh": "10s",
-    "revision": 1,
-    "schemaVersion": 38,
-    "style": "dark",
+    "schemaVersion": 40,
     "tags": [
       "Proxmox",
       "Flux",
@@ -2568,52 +2602,47 @@
       "list": [
         {
           "current": {
-            "selected": false,
-            "text": "Proxmox",
-            "value": "Proxmox"
+            "text": "influxdb",
+            "value": "adyu2hcj87m68e"
           },
           "description": "Fluxlang Capable Datasouce",
-          "hide": 0,
           "includeAll": false,
           "label": "Datasource",
-          "multi": false,
           "name": "dsProxmox",
           "options": [],
           "query": "influxdb",
-          "queryValue": "",
           "refresh": 1,
           "regex": "",
-          "skipUrlSync": false,
           "type": "datasource"
         },
         {
-          "current": {},
+          "current": {
+            "text": "influxdb",
+            "value": "influxdb"
+          },
           "datasource": {
             "type": "influxdb",
             "uid": "${dsProxmox}"
           },
           "definition": "buckets()",
-          "hide": 0,
           "includeAll": false,
-          "multi": false,
           "name": "Bucket",
           "options": [],
           "query": "buckets()",
           "refresh": 1,
           "regex": "",
-          "skipUrlSync": false,
-          "sort": 0,
           "type": "query"
         },
         {
-          "allValue": "",
-          "current": {},
+          "current": {
+            "text": "All",
+            "value": "$__all"
+          },
           "datasource": {
             "type": "influxdb",
             "uid": "${dsProxmox}"
           },
           "definition": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e \n    r._measurement == \"system\" and\n    r.object == \"nodes\"\n  )\n  |\u003e keyValues(keyColumns: [\"host\"])\n  |\u003e group()\n  |\u003e keep(columns: [\"host\"])\n  |\u003e distinct(column: \"host\")\n\n",
-          "hide": 0,
           "includeAll": true,
           "label": "Server",
           "multi": true,
@@ -2622,7 +2651,6 @@
           "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |\u003e filter(fn: (r) =\u003e \n    r._measurement == \"system\" and\n    r.object == \"nodes\"\n  )\n  |\u003e keyValues(keyColumns: [\"host\"])\n  |\u003e group()\n  |\u003e keep(columns: [\"host\"])\n  |\u003e distinct(column: \"host\")\n\n",
           "refresh": 1,
           "regex": "",
-          "skipUrlSync": false,
           "sort": 1,
           "type": "query"
         }
