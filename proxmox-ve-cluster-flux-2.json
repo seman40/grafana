@@ -951,7 +951,7 @@
                 "tooltip": false,
                 "viz": false
               },
-              "lineWidth": 0,
+              "lineWidth": 6,
               "scaleDistribution": {
                 "log": 10,
                 "type": "log"
@@ -999,7 +999,7 @@
         },
         "id": 62,
         "options": {
-          "barRadius": 0,
+          "barRadius": 0.5,
           "barWidth": 0.63,
           "colorByField": "_value",
           "fullHighlight": true,
@@ -1015,7 +1015,6 @@
           "stacking": "none",
           "tooltip": {
             "hideZeros": false,
-            "maxWidth": 300,
             "mode": "multi",
             "sort": "none"
           },
