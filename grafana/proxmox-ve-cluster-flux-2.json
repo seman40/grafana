@@ -992,8 +992,8 @@
           "overrides": []
         },
         "gridPos": {
-          "h": 7,
-          "w": 12,
+          "h": 13,
+          "w": 24,
           "x": 0,
           "y": 18
         },
@@ -1051,135 +1051,12 @@
         "type": "barchart"
       },
       {
-        "datasource": {
-          "type": "influxdb",
-          "uid": "${dsProxmox}"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisGridShow": true,
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "fillOpacity": 80,
-              "gradientMode": "opacity",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "lineWidth": 1,
-              "scaleDistribution": {
-                "log": 10,
-                "type": "log"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "max": 121000,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "light-red",
-                  "value": null
-                },
-                {
-                  "color": "#EF843C",
-                  "value": 10800
-                },
-                {
-                  "color": "#EAB839",
-                  "value": 86400
-                },
-                {
-                  "color": "light-green",
-                  "value": 259200
-                },
-                {
-                  "color": "#6ED0E0",
-                  "value": 604800
-                }
-              ]
-            },
-            "unit": "s"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 7,
-          "w": 12,
-          "x": 12,
-          "y": 18
-        },
-        "id": 19,
-        "options": {
-          "barRadius": 0,
-          "barWidth": 0.63,
-          "colorByField": "_value",
-          "fullHighlight": true,
-          "groupWidth": 0.7,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "right",
-            "showLegend": false
-          },
-          "orientation": "vertical",
-          "showValue": "never",
-          "stacking": "none",
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "multi",
-            "sort": "none"
-          },
-          "xField": "host",
-          "xTickLabelRotation": 45,
-          "xTickLabelSpacing": 0
-        },
-        "pluginVersion": "11.5.1",
-        "targets": [
-          {
-            "datasource": {
-              "type": "influxdb",
-              "uid": "${dsProxmox}"
-            },
-            "hide": false,
-            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: -10m)\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"system\")\n  |\u003e filter(fn: (r) =\u003e r[\"_field\"] == \"uptime\")\n  |\u003e filter(fn: (r) =\u003e r[\"object\"] == \"lxc\")\n  |\u003e filter(fn: (r) =\u003e contains(value: r[\"nodename\"], set: ${server:json}))\n  |\u003e filter(fn: (r) =\u003e r._value \u003e 0)\n  |\u003e last()\n  |\u003e limit(n:1)\n  |\u003e group(columns: [\"_measurement\"])\n  |\u003e keep(columns: [\"host\",\"_value\"])\n  \n",
-            "refId": "A"
-          }
-        ],
-        "title": "Running LXCs",
-        "transformations": [
-          {
-            "id": "organize",
-            "options": {
-              "excludeByName": {},
-              "indexByName": {},
-              "renameByName": {
-                "_value": "uptime"
-              }
-            }
-          }
-        ],
-        "transparent": true,
-        "type": "barchart"
-      },
-      {
         "collapsed": false,
         "gridPos": {
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 25
+          "y": 31
         },
         "id": 23,
         "panels": [],
@@ -1225,7 +1102,7 @@
           "h": 8,
           "w": 5,
           "x": 0,
-          "y": 26
+          "y": 32
         },
         "id": 40,
         "options": {
@@ -1309,7 +1186,7 @@
           "h": 8,
           "w": 7,
           "x": 5,
-          "y": 26
+          "y": 32
         },
         "id": 14,
         "options": {
@@ -1354,6 +1231,129 @@
         "title": "Local Storage Pools",
         "transparent": true,
         "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "influxdb",
+          "uid": "${dsProxmox}"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisGridShow": true,
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "opacity",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineWidth": 1,
+              "scaleDistribution": {
+                "log": 10,
+                "type": "log"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "max": 121000,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "light-red",
+                  "value": null
+                },
+                {
+                  "color": "#EF843C",
+                  "value": 10800
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 86400
+                },
+                {
+                  "color": "light-green",
+                  "value": 259200
+                },
+                {
+                  "color": "#6ED0E0",
+                  "value": 604800
+                }
+              ]
+            },
+            "unit": "s"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 12,
+          "x": 12,
+          "y": 32
+        },
+        "id": 19,
+        "options": {
+          "barRadius": 0,
+          "barWidth": 0.63,
+          "colorByField": "_value",
+          "fullHighlight": true,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "right",
+            "showLegend": false
+          },
+          "orientation": "vertical",
+          "showValue": "never",
+          "stacking": "none",
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "multi",
+            "sort": "none"
+          },
+          "xField": "host",
+          "xTickLabelRotation": 45,
+          "xTickLabelSpacing": 0
+        },
+        "pluginVersion": "11.5.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "influxdb",
+              "uid": "${dsProxmox}"
+            },
+            "hide": false,
+            "query": "from(bucket: \"${Bucket}\")\n  |\u003e range(start: -10m)\n  |\u003e filter(fn: (r) =\u003e r[\"_measurement\"] == \"system\")\n  |\u003e filter(fn: (r) =\u003e r[\"_field\"] == \"uptime\")\n  |\u003e filter(fn: (r) =\u003e r[\"object\"] == \"lxc\")\n  |\u003e filter(fn: (r) =\u003e contains(value: r[\"nodename\"], set: ${server:json}))\n  |\u003e filter(fn: (r) =\u003e r._value \u003e 0)\n  |\u003e last()\n  |\u003e limit(n:1)\n  |\u003e group(columns: [\"_measurement\"])\n  |\u003e keep(columns: [\"host\",\"_value\"])\n  \n",
+            "refId": "A"
+          }
+        ],
+        "title": "Running LXCs",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {},
+              "indexByName": {},
+              "renameByName": {
+                "_value": "uptime"
+              }
+            }
+          }
+        ],
+        "transparent": true,
+        "type": "barchart"
       },
       {
         "datasource": {
@@ -1420,7 +1420,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 26
+          "y": 39
         },
         "id": 41,
         "options": {
@@ -1521,7 +1521,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 34
+          "y": 40
         },
         "id": 26,
         "options": {
@@ -1622,7 +1622,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 34
+          "y": 47
         },
         "id": 28,
         "options": {
@@ -1717,7 +1717,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 42
+          "y": 48
         },
         "id": 29,
         "options": {
@@ -1809,7 +1809,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 42
+          "y": 55
         },
         "id": 43,
         "options": {
@@ -1845,7 +1845,7 @@
           "h": 1,
           "w": 24,
           "x": 0,
-          "y": 50
+          "y": 63
         },
         "id": 47,
         "panels": [],
@@ -1914,7 +1914,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 51
+          "y": 64
         },
         "id": 30,
         "options": {
@@ -2006,7 +2006,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 51
+          "y": 64
         },
         "id": 32,
         "options": {
@@ -2098,7 +2098,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 59
+          "y": 72
         },
         "id": 31,
         "options": {
@@ -2190,7 +2190,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 59
+          "y": 72
         },
         "id": 33,
         "options": {
@@ -2282,7 +2282,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 67
+          "y": 80
         },
         "id": 34,
         "options": {
@@ -2374,7 +2374,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 67
+          "y": 80
         },
         "id": 36,
         "options": {
@@ -2466,7 +2466,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 75
+          "y": 88
         },
         "id": 35,
         "options": {
@@ -2558,7 +2558,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 75
+          "y": 88
         },
         "id": 37,
         "options": {
