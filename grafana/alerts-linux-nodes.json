@@ -30,15 +30,13 @@
     "description": "Alerts for Linux Nodes using prometheus and node_exporter. You can have alerts for Disk space, CPU and Memory. Also added a log of alerts and alert status.",
     "editable": true,
     "fiscalYearStartMonth": 0,
-    "gnetId": 5984,
     "graphTooltip": 0,
     "links": [],
-    "liveNow": false,
     "panels": [
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
         },
         "gridPos": {
           "h": 9,
@@ -47,7 +45,6 @@
           "y": 0
         },
         "id": 2,
-        "links": [],
         "options": {
           "alertInstanceLabelFilter": "",
           "alertName": "",
@@ -74,23 +71,14 @@
           "viewMode": "list"
         },
         "pluginVersion": "8.2.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Alerts Status",
         "transparent": true,
         "type": "alertlist"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
         },
         "gridPos": {
           "h": 9,
@@ -99,7 +87,6 @@
           "y": 0
         },
         "id": 3,
-        "links": [],
         "options": {
           "alertInstanceLabelFilter": "",
           "alertName": "",
@@ -126,15 +113,6 @@
           "viewMode": "list"
         },
         "pluginVersion": "8.2.0",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
-            "refId": "A"
-          }
-        ],
         "title": "Alerts Log",
         "transparent": true,
         "type": "alertlist"
@@ -152,7 +130,10 @@
             "custom": {
               "align": "center",
               "cellOptions": {
-                "type": "color-text"
+                "applyToRow": false,
+                "mode": "gradient",
+                "type": "color-background",
+                "wrapText": false
               },
               "filterable": false,
               "inspect": false
@@ -204,7 +185,6 @@
           "y": 9
         },
         "id": 1,
-        "links": [],
         "options": {
           "cellHeight": "sm",
           "footer": {
@@ -217,7 +197,7 @@
           },
           "showHeader": true
         },
-        "pluginVersion": "10.0.0",
+        "pluginVersion": "11.5.1",
         "targets": [
           {
             "datasource": {
@@ -254,46 +234,6 @@
         "type": "table"
       },
       {
-        "alert": {
-          "alertRuleTags": {},
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  90
-                ],
-                "type": "gt"
-              },
-              "operator": {
-                "type": "or"
-              },
-              "query": {
-                "params": [
-                  "B",
-                  "5m",
-                  "now"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "avg"
-              },
-              "type": "query"
-            }
-          ],
-          "executionErrorState": "alerting",
-          "for": "0m",
-          "frequency": "60s",
-          "handler": 1,
-          "message": "CPU Usage Alert",
-          "name": "Linux Nodes CPU Usage alert",
-          "noDataState": "no_data",
-          "notifications": []
-        },
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
         "datasource": {
           "type": "prometheus",
           "uid": "Llmbz5f4z"
@@ -304,45 +244,17 @@
           },
           "overrides": []
         },
-        "fill": 1,
-        "fillGradient": 0,
         "gridPos": {
           "h": 7,
           "w": 24,
           "x": 0,
           "y": 28
         },
-        "hiddenSeries": false,
         "id": 4,
-        "legend": {
-          "alignAsTable": false,
-          "avg": false,
-          "current": true,
-          "hideEmpty": false,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
         "options": {
           "alertThreshold": true
         },
-        "paceLength": 10,
-        "percentage": false,
         "pluginVersion": "10.0.0",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
         "targets": [
           {
             "datasource": {
@@ -359,88 +271,11 @@
             "refId": "B"
           }
         ],
-        "thresholds": [
-          {
-            "colorMode": "critical",
-            "fill": true,
-            "line": true,
-            "op": "gt",
-            "value": 90,
-            "visible": true
-          }
-        ],
-        "timeRegions": [],
         "title": "Linux Nodes CPU Usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
         "transparent": true,
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "percent",
-            "logBase": 1,
-            "max": "100",
-            "min": "0",
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
+        "type": "timeseries"
       },
       {
-        "alert": {
-          "alertRuleTags": {},
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  90
-                ],
-                "type": "gt"
-              },
-              "operator": {
-                "type": "and"
-              },
-              "query": {
-                "params": [
-                  "A",
-                  "5m",
-                  "now"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "avg"
-              },
-              "type": "query"
-            }
-          ],
-          "executionErrorState": "alerting",
-          "for": "0m",
-          "frequency": "60s",
-          "handler": 1,
-          "name": "Linux Nodes Memory Usage alert",
-          "noDataState": "no_data",
-          "notifications": []
-        },
-        "aliasColors": {},
-        "bars": false,
-        "dashLength": 10,
-        "dashes": false,
         "datasource": {
           "type": "prometheus",
           "uid": "Llmbz5f4z"
@@ -451,43 +286,17 @@
           },
           "overrides": []
         },
-        "fill": 1,
-        "fillGradient": 0,
         "gridPos": {
           "h": 7,
           "w": 24,
           "x": 0,
           "y": 35
         },
-        "hiddenSeries": false,
         "id": 5,
-        "legend": {
-          "avg": false,
-          "current": true,
-          "max": false,
-          "min": false,
-          "rightSide": true,
-          "show": true,
-          "total": false,
-          "values": true
-        },
-        "lines": true,
-        "linewidth": 1,
-        "links": [],
-        "nullPointMode": "null",
         "options": {
           "alertThreshold": true
         },
-        "paceLength": 10,
-        "percentage": false,
         "pluginVersion": "10.0.0",
-        "pointradius": 5,
-        "points": false,
-        "renderer": "flot",
-        "seriesOverrides": [],
-        "spaceLength": 10,
-        "stack": false,
-        "steppedLine": false,
         "targets": [
           {
             "datasource": {
@@ -503,51 +312,14 @@
             "refId": "A"
           }
         ],
-        "thresholds": [
-          {
-            "colorMode": "critical",
-            "fill": true,
-            "line": true,
-            "op": "gt",
-            "value": 90,
-            "visible": true
-          }
-        ],
-        "timeRegions": [],
         "title": "Linux Nodes Memory Usage",
-        "tooltip": {
-          "shared": true,
-          "sort": 0,
-          "value_type": "individual"
-        },
         "transparent": true,
-        "type": "graph",
-        "xaxis": {
-          "mode": "time",
-          "show": true,
-          "values": []
-        },
-        "yaxes": [
-          {
-            "format": "percent",
-            "logBase": 1,
-            "max": "100",
-            "show": true
-          },
-          {
-            "format": "short",
-            "logBase": 1,
-            "show": true
-          }
-        ],
-        "yaxis": {
-          "align": false
-        }
+        "type": "timeseries"
       }
     ],
+    "preload": false,
     "refresh": "",
-    "schemaVersion": 38,
-    "style": "dark",
+    "schemaVersion": 40,
     "tags": [
       "alerts",
       "linux"
@@ -559,31 +331,7 @@
       "from": "now-7d",
       "to": "now"
     },
-    "timepicker": {
-      "refresh_intervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
-      ]
-    },
+    "timepicker": {},
     "timezone": "",
     "title": "Alerts - Linux Nodes",
     "weekStart": ""
