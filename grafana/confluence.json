@@ -1027,10 +1027,12 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
+            "editorMode": "code",
             "expr": "confluence_mail_queue_gauge",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "queue",
+            "range": true,
             "refId": "A"
           }
         ],
