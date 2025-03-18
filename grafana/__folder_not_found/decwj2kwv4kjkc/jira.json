@@ -1029,10 +1029,12 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
-            "expr": "sum(increase(jira_dashboard_view_count[1h]))",
+            "editorMode": "code",
+            "expr": "sum(increase(jira_dashboard_view_count_total[1h]))",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "",
+            "range": true,
             "refId": "A"
           }
         ],
