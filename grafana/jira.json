@@ -705,10 +705,12 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
-            "expr": "sum(jira_issue_update_count) by (projectKey)",
+            "editorMode": "code",
+            "expr": "sum(jira_issue_update_count_total) by (projectKey)",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "{{projectKey}}",
+            "range": true,
             "refId": "A",
             "step": 4
           }
