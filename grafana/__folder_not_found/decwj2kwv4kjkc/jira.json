@@ -1266,10 +1266,12 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
-            "expr": "(sum(rate(jira_request_duration_on_path_sum[1m])) by (path)) / (sum(rate(jira_request_duration_on_path_count[1m])) by (path))",
+            "editorMode": "code",
+            "expr": "(sum(rate(jira_request_duration_on_path_sum[2m])) by (path)) / (sum(rate(jira_request_duration_on_path_count[2m])) by (path))",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "{{path}}",
+            "range": true,
             "refId": "A",
             "step": 2
           }
