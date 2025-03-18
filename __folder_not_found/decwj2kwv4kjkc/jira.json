@@ -809,10 +809,12 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
-            "expr": "sum(jira_issue_update_count) by (username)",
+            "editorMode": "code",
+            "expr": "sum(jira_issue_update_count_total) by (username)",
             "format": "time_series",
             "intervalFactor": 2,
             "legendFormat": "{{username}}",
+            "range": true,
             "refId": "A",
             "step": 4
           }
@@ -1880,7 +1882,7 @@
       "list": []
     },
     "time": {
-      "from": "now-1h",
+      "from": "now-6h",
       "to": "now"
     },
     "timepicker": {},
