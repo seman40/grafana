@@ -1149,6 +1149,35 @@
                   }
                 }
               ]
+            },
+            {
+              "__systemRef": "hideSeriesFrom",
+              "matcher": {
+                "id": "byNames",
+                "options": {
+                  "mode": "exclude",
+                  "names": [
+                    "/",
+                    "/500page.jsp",
+                    "/blank.html",
+                    "/jcaptcha",
+                    "/labels",
+                    "/x"
+                  ],
+                  "prefix": "All except:",
+                  "readOnly": true
+                }
+              },
+              "properties": [
+                {
+                  "id": "custom.hideFrom",
+                  "value": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": true
+                  }
+                }
+              ]
             }
           ]
         },
