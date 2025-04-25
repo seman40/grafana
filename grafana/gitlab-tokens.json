@@ -222,6 +222,10 @@
                 {
                   "color": "#EAB839",
                   "value": 100
+                },
+                {
+                  "color": "dark-red",
+                  "value": 200
                 }
               ]
             }
