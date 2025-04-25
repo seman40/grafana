@@ -347,7 +347,29 @@
     "schemaVersion": 40,
     "tags": [],
     "templating": {
-      "list": []
+      "list": [
+        {
+          "current": {
+            "text": "4autotest",
+            "value": "4autotest"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Llmbz5f4z"
+          },
+          "definition": "label_values(gitlab_token,token_name)",
+          "name": "target",
+          "options": [],
+          "query": {
+            "qryType": 1,
+            "query": "label_values(gitlab_token,token_name)",
+            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "",
+          "type": "query"
+        }
+      ]
     },
     "time": {
       "from": "now-5m",
