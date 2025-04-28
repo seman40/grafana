@@ -358,6 +358,7 @@
             "uid": "Llmbz5f4z"
           },
           "definition": "label_values(gitlab_token,token_name)",
+          "includeAll": true,
           "name": "target",
           "options": [],
           "query": {
