@@ -10,10 +10,7 @@
         {
           "$$hashKey": "object:15",
           "builtIn": 1,
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
+          "datasource": "-- Grafana --",
           "enable": true,
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
@@ -24,8 +21,9 @@
     },
     "description": "Access current weather data for any location on Earth including over 200,000 cities!",
     "editable": true,
-    "fiscalYearStartMonth": 0,
+    "gnetId": 9710,
     "graphTooltip": 2,
+    "iteration": 1621979328005,
     "links": [
       {
         "icon": "doc",
@@ -38,22 +36,19 @@
     ],
     "panels": [
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
             "decimals": 2,
             "mappings": [
               {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
+                "$$hashKey": "object:143",
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
               }
             ],
             "max": 105,
@@ -75,7 +70,7 @@
                 }
               ]
             },
-            "unit": "celsius"
+            "unit": "fahrenheit"
           },
           "overrides": []
         },
@@ -86,9 +81,8 @@
           "y": 0
         },
         "id": 2,
+        "links": [],
         "options": {
-          "minVizHeight": 75,
-          "minVizWidth": 75,
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -99,16 +93,11 @@
           },
           "showThresholdLabels": false,
           "showThresholdMarkers": true,
-          "sizing": "auto",
           "text": {}
         },
-        "pluginVersion": "11.5.2",
+        "pluginVersion": "7.5.3",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_temperature{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -165,22 +154,19 @@
         "type": "gauge"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
             "decimals": 1,
             "mappings": [
               {
-                "options": {
-                  "match": "null",
-                  "result": {
-                    "text": "N/A"
-                  }
-                },
-                "type": "special"
+                "$$hashKey": "object:195",
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
               }
             ],
             "max": 50,
@@ -213,9 +199,8 @@
           "y": 0
         },
         "id": 3,
+        "links": [],
         "options": {
-          "minVizHeight": 75,
-          "minVizWidth": 75,
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -226,16 +211,11 @@
           },
           "showThresholdLabels": false,
           "showThresholdMarkers": true,
-          "sizing": "auto",
           "text": {}
         },
-        "pluginVersion": "11.5.2",
+        "pluginVersion": "7.5.3",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_windspeed{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -292,28 +272,27 @@
         "type": "gauge"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "#299c46",
+          "rgba(237, 129, 40, 0.89)",
+          "#d44a3a"
+        ],
+        "datasource": "Prometheus",
+        "decimals": null,
         "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
+          "defaults": {},
           "overrides": []
+        },
+        "format": "none",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -322,31 +301,82 @@
           "y": 0
         },
         "id": 11,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+        "interval": null,
+        "links": [],
+        "mappingType": 2,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "0",
+            "text": "↓",
+            "to": "22.5"
+          },
+          {
+            "from": "22.5",
+            "text": "↙",
+            "to": "77.5"
+          },
+          {
+            "from": "77.5",
+            "text": "←",
+            "to": "112.5"
+          },
+          {
+            "from": "112.5",
+            "text": "↖",
+            "to": "157.5"
+          },
+          {
+            "from": "157.5",
+            "text": "↑",
+            "to": "202.5"
+          },
+          {
+            "from": "202.5",
+            "text": "↗",
+            "to": "247.5"
+          },
+          {
+            "from": "247.5",
+            "text": "→",
+            "to": "292.5"
+          },
+          {
+            "from": "292.5",
+            "text": "↘",
+            "to": "337.5"
+          },
+          {
+            "from": "337.5",
+            "text": "↓",
+            "to": "360"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
         },
-        "pluginVersion": "11.5.2",
+        "tableColumn": "",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_winddegree{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -399,32 +429,41 @@
             ]
           }
         ],
+        "thresholds": "",
         "title": "Wind direction",
-        "type": "stat"
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": true,
+        "colors": [
+          "#5794F2",
+          "#629e51",
+          "#ef843c"
+        ],
+        "datasource": "Prometheus",
+        "decimals": 0,
         "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
+          "defaults": {},
           "overrides": []
+        },
+        "format": "pressurehpa",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -433,31 +472,44 @@
           "y": 0
         },
         "id": 5,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "$$hashKey": "object:265",
+            "name": "value to text",
+            "value": 1
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          {
+            "$$hashKey": "object:266",
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true
         },
-        "pluginVersion": "11.5.2",
+        "tableColumn": "",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_pressure{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -510,32 +562,41 @@
             ]
           }
         ],
+        "thresholds": "1013.93, 1018.75",
         "title": "Atmospheric pressure",
-        "type": "stat"
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "$$hashKey": "object:268",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "#299c46",
+          "rgba(237, 129, 40, 0.89)",
+          "#d44a3a"
+        ],
+        "datasource": "Prometheus",
         "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
+          "defaults": {},
           "overrides": []
+        },
+        "format": "none",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 6,
@@ -544,31 +605,44 @@
           "y": 0
         },
         "id": 9,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "$$hashKey": "object:308",
+            "name": "value to text",
+            "value": 1
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          {
+            "$$hashKey": "object:309",
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
         },
-        "pluginVersion": "11.5.2",
+        "tableColumn": "",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_currentconditions{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [],
@@ -605,13 +679,41 @@
             ]
           }
         ],
+        "thresholds": "",
         "title": "Weather condition",
-        "type": "stat"
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "$$hashKey": "object:311",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "name"
       },
       {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "#299c46",
+          "rgba(237, 129, 40, 0.89)",
+          "#d44a3a"
+        ],
+        "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {},
           "overrides": []
+        },
+        "format": "dateTimeAsUS",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -620,42 +722,138 @@
           "y": 0
         },
         "id": 13,
-        "options": {
-          "code": {
-            "language": "plaintext",
-            "showLineNumbers": false,
-            "showMiniMap": false
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "$$hashKey": "object:400",
+            "name": "value to text",
+            "value": 1
           },
-          "content": "# Title\n\nFor markdown syntax help: [commonmark.org/help](https://commonmark.org/help/)",
-          "mode": "markdown"
+          {
+            "$$hashKey": "object:401",
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
         },
-        "pluginVersion": "11.5.2",
-        "title": "Sunrise time",
-        "type": "text"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
+        "tableColumn": "",
+        "targets": [
+          {
+            "exemplar": true,
+            "expr": "openweather_sunrise{location=~\"$city\",job=~\"$job\"} * 1000",
+            "groupBy": [
+              {
+                "params": [
+                  "$__interval"
+                ],
+                "type": "time"
+              },
+              {
+                "params": [
+                  "null"
+                ],
+                "type": "fill"
+              }
+            ],
+            "interval": "",
+            "legendFormat": "",
+            "measurement": "openweathermap",
+            "orderByTime": "ASC",
+            "policy": "default",
+            "refId": "A",
+            "resultFormat": "time_series",
+            "select": [
+              [
                 {
-                  "color": "green",
-                  "value": null
+                  "params": [
+                    "sys_sunrise"
+                  ],
+                  "type": "field"
                 },
                 {
-                  "color": "red",
-                  "value": 80
+                  "params": [],
+                  "type": "mean"
+                },
+                {
+                  "params": [
+                    "*1000"
+                  ],
+                  "type": "math"
                 }
               ]
-            }
-          },
+            ],
+            "tags": [
+              {
+                "key": "sys_country",
+                "operator": "=~",
+                "value": "/^$country$/"
+              },
+              {
+                "condition": "AND",
+                "key": "name",
+                "operator": "=~",
+                "value": "/^$city$/"
+              }
+            ]
+          }
+        ],
+        "thresholds": "",
+        "title": "Sunrise time",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "$$hashKey": "object:403",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
+      },
+      {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "#ef843c",
+          "#629e51",
+          "#ef843c"
+        ],
+        "datasource": "Prometheus",
+        "decimals": 0,
+        "fieldConfig": {
+          "defaults": {},
           "overrides": []
+        },
+        "format": "percent",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -664,31 +862,42 @@
           "y": 3
         },
         "id": 7,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true
         },
-        "pluginVersion": "11.5.2",
+        "tableColumn": "",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_cloudiness{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -741,32 +950,41 @@
             ]
           }
         ],
+        "thresholds": "",
         "title": "Cloudiness",
-        "type": "stat"
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "#ef843c",
+          "#629e51",
+          "#ef843c"
+        ],
+        "datasource": "Prometheus",
+        "decimals": 0,
         "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
+          "defaults": {},
           "overrides": []
+        },
+        "format": "percent",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -775,31 +993,42 @@
           "y": 3
         },
         "id": 6,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "name": "value to text",
+            "value": 1
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          {
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": true
         },
-        "pluginVersion": "11.5.2",
+        "tableColumn": "",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_humidity{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -852,32 +1081,40 @@
             ]
           }
         ],
+        "thresholds": "",
         "title": "Humidity",
-        "type": "stat"
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+          "#299c46",
+          "rgba(237, 129, 40, 0.89)",
+          "#d44a3a"
+        ],
+        "datasource": "Prometheus",
         "fieldConfig": {
-          "defaults": {
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
-          },
+          "defaults": {},
           "overrides": []
+        },
+        "format": "dateTimeAsUS",
+        "gauge": {
+          "maxValue": 100,
+          "minValue": 0,
+          "show": false,
+          "thresholdLabels": false,
+          "thresholdMarkers": true
         },
         "gridPos": {
           "h": 3,
@@ -886,31 +1123,44 @@
           "y": 3
         },
         "id": 14,
-        "maxDataPoints": 100,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+          {
+            "$$hashKey": "object:512",
+            "name": "value to text",
+            "value": 1
           },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
+          {
+            "$$hashKey": "object:513",
+            "name": "range to text",
+            "value": 2
+          }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+          {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+          }
+        ],
+        "sparkline": {
+          "fillColor": "rgba(31, 118, 189, 0.18)",
+          "full": false,
+          "lineColor": "rgb(31, 120, 193)",
+          "show": false
         },
-        "pluginVersion": "11.5.2",
+        "tableColumn": "",
         "targets": [
           {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_sunset{location=~\"$city\",job=~\"$job\"} * 1000",
             "groupBy": [
@@ -969,99 +1219,73 @@
             ]
           }
         ],
+        "thresholds": "",
         "title": "Sunset time",
-        "type": "stat"
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+          {
+            "$$hashKey": "object:515",
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+          }
+        ],
+        "valueName": "current"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "links": []
           },
           "overrides": []
         },
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 0,
           "y": 6
         },
+        "hiddenSeries": false,
         "id": 200,
-        "options": {
-          "alertThreshold": true,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "hideEmpty": true,
+          "max": true,
+          "min": true,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
         },
-        "pluginVersion": "11.5.2",
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_temperature{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -1126,99 +1350,104 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Temperature",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 1,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:642",
+            "decimals": null,
+            "format": "fahrenheit",
+            "label": null,
+            "logBase": 1,
+            "max": "105",
+            "min": "-5",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:643",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "decimals": 0,
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "links": []
           },
           "overrides": []
         },
+        "fill": 0,
+        "fillGradient": 0,
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 12,
           "y": 6
         },
+        "hiddenSeries": false,
         "id": 205,
-        "options": {
-          "alertThreshold": true,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "hideEmpty": true,
+          "max": true,
+          "min": true,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
         },
-        "pluginVersion": "11.5.2",
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_humidity{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -1283,99 +1512,104 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Humidity",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:2732",
+            "decimals": 0,
+            "format": "percent",
+            "label": "",
+            "logBase": 1,
+            "max": "100",
+            "min": "0",
+            "show": true
+          },
+          {
+            "$$hashKey": "object:2733",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "decimals": null,
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "links": []
           },
           "overrides": []
         },
+        "fill": 0,
+        "fillGradient": 0,
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 0,
           "y": 15
         },
+        "hiddenSeries": false,
         "id": 204,
-        "options": {
-          "alertThreshold": true,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "hideEmpty": true,
+          "max": true,
+          "min": true,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
         },
-        "pluginVersion": "11.5.2",
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_pressure{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -1440,99 +1674,103 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Atmospheric pressure",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:2654",
+            "decimals": null,
+            "format": "pressurehpa",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:2655",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "links": []
           },
           "overrides": []
         },
+        "fill": 0,
+        "fillGradient": 0,
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 12,
           "y": 15
         },
+        "hiddenSeries": false,
         "id": 202,
-        "options": {
-          "alertThreshold": true,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "hideEmpty": true,
+          "max": true,
+          "min": true,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
         },
-        "pluginVersion": "11.5.2",
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_windspeed{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -1597,99 +1835,105 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Wind speed",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:2059",
+            "format": "velocitymph",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:2060",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
+        "aliasColors": {
+          "Cloudiness": "super-light-blue"
         },
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "decimals": 0,
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "links": []
           },
           "overrides": []
         },
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 0,
           "y": 24
         },
+        "hiddenSeries": false,
         "id": 206,
-        "options": {
-          "alertThreshold": true,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "hideEmpty": true,
+          "max": true,
+          "min": true,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
         },
-        "pluginVersion": "11.5.2",
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_cloudiness{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -1754,99 +1998,106 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Cloudiness",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:2801",
+            "decimals": 0,
+            "format": "percent",
+            "label": null,
+            "logBase": 1,
+            "max": "100",
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:2802",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
+        "aliasColors": {
+          "Rain": "blue"
         },
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "Prometheus",
+        "decimals": 0,
         "fieldConfig": {
           "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisBorderShow": false,
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "barWidthFactor": 0.6,
-              "drawStyle": "line",
-              "fillOpacity": 0,
-              "gradientMode": "none",
-              "hideFrom": {
-                "legend": false,
-                "tooltip": false,
-                "viz": false
-              },
-              "insertNulls": false,
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "auto",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "links": [],
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "red",
-                  "value": 80
-                }
-              ]
-            }
+            "links": []
           },
           "overrides": []
         },
+        "fill": 1,
+        "fillGradient": 0,
         "gridPos": {
           "h": 9,
           "w": 12,
           "x": 12,
           "y": 24
         },
+        "hiddenSeries": false,
         "id": 207,
-        "options": {
-          "alertThreshold": true,
-          "legend": {
-            "calcs": [],
-            "displayMode": "list",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "hideZeros": false,
-            "mode": "single",
-            "sort": "none"
-          }
+        "legend": {
+          "alignAsTable": true,
+          "avg": true,
+          "current": true,
+          "hideEmpty": true,
+          "max": true,
+          "min": true,
+          "rightSide": false,
+          "show": true,
+          "total": false,
+          "values": true
         },
-        "pluginVersion": "11.5.2",
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "7.5.3",
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
             "exemplar": true,
             "expr": "openweather_rain1h{location=~\"$city\",job=~\"$job\"} / 25.4",
             "groupBy": [
@@ -1911,27 +2162,73 @@
             ]
           }
         ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
         "title": "Rain in last hour",
-        "type": "timeseries"
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:2801",
+            "decimals": 2,
+            "format": "inches",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:2802",
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
+        }
       }
     ],
-    "preload": false,
-    "refresh": "",
-    "schemaVersion": 40,
+    "schemaVersion": 27,
+    "style": "dark",
     "tags": [
       "weather"
     ],
     "templating": {
       "list": [
         {
+          "allValue": null,
           "current": {
-            "text": "Tomsk, RU",
-            "value": "Tomsk, RU"
+            "selected": false,
+            "text": "Woodstock, Georgia",
+            "value": "Woodstock, Georgia"
           },
           "datasource": "Prometheus",
           "definition": "label_values(location)",
+          "description": null,
+          "error": null,
+          "hide": 0,
           "includeAll": false,
           "label": "City",
+          "multi": false,
           "name": "city",
           "options": [],
           "query": {
@@ -1940,17 +2237,29 @@
           },
           "refresh": 1,
           "regex": "",
-          "type": "query"
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "location",
+          "tags": [],
+          "tagsQuery": "openweather_temperature",
+          "type": "query",
+          "useTags": false
         },
         {
+          "allValue": null,
           "current": {
-            "text": "openweather",
-            "value": "openweather"
+            "selected": false,
+            "text": "openweather-exporter",
+            "value": "openweather-exporter"
           },
           "datasource": "Prometheus",
           "definition": "label_values(job)",
+          "description": null,
+          "error": null,
+          "hide": 0,
           "includeAll": false,
           "label": "Job",
+          "multi": false,
           "name": "job",
           "options": [],
           "query": {
@@ -1959,12 +2268,18 @@
           },
           "refresh": 1,
           "regex": "/.*openweather.*/",
-          "type": "query"
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "location",
+          "tags": [],
+          "tagsQuery": "openweather_temperature",
+          "type": "query",
+          "useTags": false
         }
       ]
     },
     "time": {
-      "from": "now-5m",
+      "from": "now-6h",
       "to": "now"
     },
     "timepicker": {
@@ -1978,11 +2293,21 @@
         "1h",
         "2h",
         "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
       ]
     },
     "timezone": "",
-    "title": "Open Weather Map",
-    "weekStart": ""
+    "title": "Open Weather Map"
   },
   "status": {}
 }
