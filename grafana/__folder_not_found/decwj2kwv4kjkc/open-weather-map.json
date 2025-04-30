@@ -1301,7 +1301,7 @@
                 }
               ]
             },
-            "unit": "fahrenheit"
+            "unit": "celsius"
           },
           "overrides": [
             {
