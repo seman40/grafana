@@ -189,7 +189,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "#629e51"
+                  "color": "#629e51",
+                  "value": null
                 },
                 {
                   "color": "orange",
@@ -213,6 +214,8 @@
         },
         "id": 3,
         "options": {
+          "minVizHeight": 75,
+          "minVizWidth": 75,
           "orientation": "horizontal",
           "reduceOptions": {
             "calcs": [
@@ -223,9 +226,10 @@
           },
           "showThresholdLabels": false,
           "showThresholdMarkers": true,
+          "sizing": "auto",
           "text": {}
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -293,7 +297,22 @@
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
           "overrides": []
         },
         "gridPos": {
@@ -304,7 +323,24 @@
         },
         "id": 11,
         "maxDataPoints": 100,
-        "options": {},
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -372,7 +408,22 @@
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
           "overrides": []
         },
         "gridPos": {
@@ -383,7 +434,24 @@
         },
         "id": 5,
         "maxDataPoints": 100,
-        "options": {},
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -451,7 +519,22 @@
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
           "overrides": []
         },
         "gridPos": {
@@ -462,7 +545,24 @@
         },
         "id": 9,
         "maxDataPoints": 100,
-        "options": {},
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -509,10 +609,6 @@
         "type": "stat"
       },
       {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
         "fieldConfig": {
           "defaults": {},
           "overrides": []
@@ -524,74 +620,18 @@
           "y": 0
         },
         "id": 13,
-        "maxDataPoints": 100,
-        "options": {},
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
-            "exemplar": true,
-            "expr": "openweather_sunrise{location=~\"$city\",job=~\"$job\"} * 1000",
-            "groupBy": [
-              {
-                "params": [
-                  "$__interval"
-                ],
-                "type": "time"
-              },
-              {
-                "params": [
-                  "null"
-                ],
-                "type": "fill"
-              }
-            ],
-            "interval": "",
-            "legendFormat": "",
-            "measurement": "openweathermap",
-            "orderByTime": "ASC",
-            "policy": "default",
-            "refId": "A",
-            "resultFormat": "time_series",
-            "select": [
-              [
-                {
-                  "params": [
-                    "sys_sunrise"
-                  ],
-                  "type": "field"
-                },
-                {
-                  "params": [],
-                  "type": "mean"
-                },
-                {
-                  "params": [
-                    "*1000"
-                  ],
-                  "type": "math"
-                }
-              ]
-            ],
-            "tags": [
-              {
-                "key": "sys_country",
-                "operator": "=~",
-                "value": "/^$country$/"
-              },
-              {
-                "condition": "AND",
-                "key": "name",
-                "operator": "=~",
-                "value": "/^$city$/"
-              }
-            ]
-          }
-        ],
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "# Title\n\nFor markdown syntax help: [commonmark.org/help](https://commonmark.org/help/)",
+          "mode": "markdown"
+        },
+        "pluginVersion": "11.5.2",
         "title": "Sunrise time",
-        "type": "stat"
+        "type": "text"
       },
       {
         "datasource": {
@@ -599,7 +639,22 @@
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
           "overrides": []
         },
         "gridPos": {
@@ -610,7 +665,24 @@
         },
         "id": 7,
         "maxDataPoints": 100,
-        "options": {},
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -678,7 +750,22 @@
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
           "overrides": []
         },
         "gridPos": {
@@ -689,7 +776,24 @@
         },
         "id": 6,
         "maxDataPoints": 100,
-        "options": {},
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -757,7 +861,22 @@
           "uid": "Llmbz5f4z"
         },
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
           "overrides": []
         },
         "gridPos": {
@@ -768,7 +887,24 @@
         },
         "id": 14,
         "maxDataPoints": 100,
-        "options": {},
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "datasource": {
@@ -843,7 +979,57 @@
         },
         "fieldConfig": {
           "defaults": {
-            "links": []
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -855,9 +1041,20 @@
         },
         "id": 200,
         "options": {
-          "alertThreshold": true
+          "alertThreshold": true,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
@@ -939,7 +1136,57 @@
         },
         "fieldConfig": {
           "defaults": {
-            "links": []
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -951,9 +1198,20 @@
         },
         "id": 205,
         "options": {
-          "alertThreshold": true
+          "alertThreshold": true,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
@@ -1035,7 +1293,57 @@
         },
         "fieldConfig": {
           "defaults": {
-            "links": []
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -1047,9 +1355,20 @@
         },
         "id": 204,
         "options": {
-          "alertThreshold": true
+          "alertThreshold": true,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
@@ -1131,7 +1450,57 @@
         },
         "fieldConfig": {
           "defaults": {
-            "links": []
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -1143,9 +1512,20 @@
         },
         "id": 202,
         "options": {
-          "alertThreshold": true
+          "alertThreshold": true,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
@@ -1227,7 +1607,57 @@
         },
         "fieldConfig": {
           "defaults": {
-            "links": []
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -1239,9 +1669,20 @@
         },
         "id": 206,
         "options": {
-          "alertThreshold": true
+          "alertThreshold": true,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
@@ -1323,7 +1764,57 @@
         },
         "fieldConfig": {
           "defaults": {
-            "links": []
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "links": [],
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
           },
           "overrides": []
         },
@@ -1335,9 +1826,20 @@
         },
         "id": 207,
         "options": {
-          "alertThreshold": true
+          "alertThreshold": true,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
         },
-        "pluginVersion": "7.5.3",
+        "pluginVersion": "11.5.2",
         "targets": [
           {
             "alias": "$tag_name, $tag_sys_country",
