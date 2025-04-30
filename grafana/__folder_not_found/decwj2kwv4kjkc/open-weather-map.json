@@ -1287,7 +1287,7 @@
             "links": [],
             "mappings": [],
             "max": 105,
-            "min": -5,
+            "min": -50,
             "thresholds": {
               "mode": "absolute",
               "steps": [
