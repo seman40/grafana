@@ -1286,7 +1286,7 @@
             },
             "links": [],
             "mappings": [],
-            "max": 105,
+            "max": 50,
             "min": -50,
             "thresholds": {
               "mode": "absolute",
@@ -1360,6 +1360,7 @@
               "type": "prometheus",
               "uid": "Llmbz5f4z"
             },
+            "editorMode": "code",
             "exemplar": true,
             "expr": "openweather_temperature{location=~\"$city\",job=~\"$job\"}",
             "groupBy": [
@@ -1393,6 +1394,7 @@
             "measurement": "openweathermap",
             "orderByTime": "ASC",
             "policy": "default",
+            "range": true,
             "refId": "A",
             "resultFormat": "time_series",
             "select": [
@@ -2433,7 +2435,7 @@
       ]
     },
     "time": {
-      "from": "now-5m",
+      "from": "now-2d",
       "to": "now"
     },
     "timepicker": {
