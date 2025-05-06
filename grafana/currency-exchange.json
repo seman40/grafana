@@ -38,6 +38,8 @@
             },
             "fieldMinMax": false,
             "mappings": [],
+            "max": 105,
+            "min": -20,
             "thresholds": {
               "mode": "absolute",
               "steps": [
