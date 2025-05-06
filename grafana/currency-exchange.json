@@ -387,7 +387,7 @@
             "url_options": {
               "body_content_type": "text/plain",
               "body_type": "raw",
-              "data": "{\r\n    \"ItemsId\": [ \"0lTEYfc6\"],\r\n    \"Options\": {\r\n        \"Tuples\": {\r\n            \"Id\": [\"Id\"],\r\n            \"Items\": [\"Value\"],\r\n            \"Messages\": []\r\n        }\r\n    }\r\n}",
+              "data": "{\r\n    \"ItemsId\": [ \"0lTEYfc6\"],\r\n    \"Options\": {\r\n        \"Tuples\": {\r\n            \"Id\": [\"Id\"],\r\n            \"Timestamp\": [\"Timestamp\"],\r\n            \"Items\": [\"Value\"],\r\n            \"Messages\": []\r\n        }\r\n    }\r\n}",
               "headers": [
                 {
                   "key": "Content-Type",
