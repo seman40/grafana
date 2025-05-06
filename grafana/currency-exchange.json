@@ -45,8 +45,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -165,8 +164,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -387,7 +385,7 @@
             "url_options": {
               "body_content_type": "text/plain",
               "body_type": "raw",
-              "data": "{\r\n    \"ItemsId\": [ \"0lTEYfc6\"],\r\n    \"Options\": {\r\n        \"Tuples\": {\r\n            \"Id\": [\"Id\"],\r\n            \"Timestamp\": [\"Timestamp\"],\r\n            \"Items\": [\"Value\"],\r\n            \"Messages\": []\r\n        }\r\n    }\r\n}",
+              "data": "{\r\n    \"ItemsId\": [ \"0lTEYfc6\"],\r\n    \"Options\": {\r\n        \"Tuples\": {\r\n            \"Items\": [\"Value\",\"Timestamp\"],\r\n            \"Messages\": []\r\n        }\r\n    }\r\n}",
               "headers": [
                 {
                   "key": "Content-Type",
@@ -400,30 +398,6 @@
           }
         ],
         "title": "Температура в серверной ИТ",
-        "transformations": [
-          {
-            "id": "extractFields",
-            "options": {
-              "delimiter": ",",
-              "format": "json",
-              "keepTime": false,
-              "replace": true,
-              "source": "items"
-            }
-          },
-          {
-            "id": "convertFieldType",
-            "options": {
-              "conversions": [
-                {
-                  "destinationType": "number",
-                  "targetField": "0"
-                }
-              ],
-              "fields": {}
-            }
-          }
-        ],
         "type": "timeseries"
       },
       {
@@ -474,8 +448,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -577,8 +550,7 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green",
-                  "value": null
+                  "color": "green"
                 },
                 {
                   "color": "red",
@@ -641,7 +613,7 @@
       "list": []
     },
     "time": {
-      "from": "now-1m",
+      "from": "now-5m",
       "to": "now"
     },
     "timepicker": {},
