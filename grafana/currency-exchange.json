@@ -128,7 +128,7 @@
             }
           }
         ],
-        "title": "Panel Title",
+        "title": "Температура в серверной",
         "transformations": [
           {
             "id": "extractFields",
