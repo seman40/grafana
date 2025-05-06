@@ -128,12 +128,19 @@
         "title": "Температура в серверной ДРПО",
         "transformations": [
           {
-            "id": "extractFields",
+            "id": "convertFieldType",
             "options": {
-              "delimiter": ",",
-              "format": "json",
-              "replace": true,
-              "source": "items"
+              "conversions": [
+                {
+                  "destinationType": "other",
+                  "targetField": "items"
+                },
+                {
+                  "destinationType": "other",
+                  "targetField": "items"
+                }
+              ],
+              "fields": {}
             }
           }
         ],
