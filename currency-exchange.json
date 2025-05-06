@@ -141,6 +141,119 @@
       },
       {
         "datasource": {
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "cel0yrzohhjwga"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 1,
+            "fieldMinMax": false,
+            "mappings": [],
+            "max": 105,
+            "min": -20,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "celsius"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 4,
+        "options": {
+          "minVizHeight": 75,
+          "minVizWidth": 75,
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "/.*/",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "pluginVersion": "11.5.2",
+        "targets": [
+          {
+            "columns": [
+              {
+                "selector": "items",
+                "text": "items",
+                "type": "string"
+              }
+            ],
+            "computed_columns": [
+              {
+                "selector": "",
+                "text": "",
+                "type": "string"
+              }
+            ],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "cel0yrzohhjwga"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "parser": "backend",
+            "refId": "A",
+            "root_selector": "devices",
+            "source": "url",
+            "type": "json",
+            "url": "https://si.elcom.local:5001/api/v1/data/get",
+            "url_options": {
+              "body_content_type": "text/plain",
+              "body_type": "raw",
+              "data": "{\r\n    \"ItemsId\": [ \"0lTEYfc6\"],\r\n    \"Options\": {\r\n        \"Tuples\": {\r\n            \"Id\": [\"Id\"],\r\n            \"Items\": [\"Value\"],\r\n            \"Messages\": []\r\n        }\r\n    }\r\n}",
+              "headers": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "method": "POST",
+              "params": []
+            }
+          }
+        ],
+        "title": "Температура в серверной ИТ",
+        "transformations": [
+          {
+            "id": "extractFields",
+            "options": {
+              "delimiter": ",",
+              "format": "json",
+              "replace": true,
+              "source": "items"
+            }
+          }
+        ],
+        "type": "gauge"
+      },
+      {
+        "datasource": {
           "type": "prometheus",
           "uid": "Llmbz5f4z"
         },
@@ -187,7 +300,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -202,7 +316,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 8
+          "y": 16
         },
         "id": 1,
         "options": {
@@ -289,7 +403,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -304,7 +419,7 @@
           "h": 8,
           "w": 12,
           "x": 0,
-          "y": 16
+          "y": 24
         },
         "id": 2,
         "options": {
