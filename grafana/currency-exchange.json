@@ -36,6 +36,7 @@
             "color": {
               "mode": "thresholds"
             },
+            "decimals": 1,
             "fieldMinMax": false,
             "mappings": [],
             "max": 105,
