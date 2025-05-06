@@ -44,7 +44,7 @@
         },
         "fieldConfig": {
           "defaults": {
-            "decimals": 2,
+            "decimals": 1,
             "mappings": [
               {
                 "options": {
