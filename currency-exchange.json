@@ -115,10 +115,6 @@
               "data": "{\r\n    \"ItemsId\": [ \"BmishHxc\"],\r\n    \"Options\": {\r\n        \"Tuples\": {\r\n            \"Id\": [\"Id\"],\r\n            \"Items\": [\"Value\"],\r\n            \"Messages\": []\r\n        }\r\n    }\r\n}",
               "headers": [
                 {
-                  "key": "Authorization",
-                  "value": " Basic bW9uaXRvcmluZzpkcnBv"
-                },
-                {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
@@ -190,7 +186,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
@@ -292,7 +289,8 @@
               "mode": "absolute",
               "steps": [
                 {
-                  "color": "green"
+                  "color": "green",
+                  "value": null
                 },
                 {
                   "color": "red",
