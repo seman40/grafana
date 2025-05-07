@@ -248,16 +248,21 @@
         "title": "Температура в серверной ИТ",
         "transformations": [
           {
+            "id": "extractFields",
+            "options": {
+              "delimiter": ",",
+              "format": "json",
+              "replace": true,
+              "source": "items"
+            }
+          },
+          {
             "id": "convertFieldType",
             "options": {
               "conversions": [
                 {
                   "destinationType": "other",
-                  "targetField": "items"
-                },
-                {
-                  "destinationType": "other",
-                  "targetField": "items"
+                  "targetField": "0"
                 }
               ],
               "fields": {}
