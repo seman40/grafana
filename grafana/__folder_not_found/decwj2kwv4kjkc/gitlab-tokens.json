@@ -28,7 +28,8 @@
     "panels": [
       {
         "datasource": {
-          "uid": "Llmbz5f4z"
+          "type": "yesoreyeram-infinity-datasource",
+          "uid": "cel0yrzohhjwga"
         },
         "fieldConfig": {
           "defaults": {
@@ -38,7 +39,8 @@
             "custom": {
               "align": "auto",
               "cellOptions": {
-                "type": "auto"
+                "type": "auto",
+                "wrapText": false
               },
               "inspect": false
             },
@@ -70,6 +72,7 @@
           "cellHeight": "sm",
           "footer": {
             "countRows": false,
+            "enablePagination": false,
             "fields": "",
             "reducer": [
               "sum"
@@ -79,90 +82,40 @@
           "showHeader": true
         },
         "pluginVersion": "11.5.2",
+        "repeatDirection": "h",
         "targets": [
           {
-            "disableTextWrap": false,
-            "editorMode": "builder",
-            "expr": "gitlab_token",
-            "fullMetaSearch": false,
-            "includeNullMetadata": false,
-            "legendFormat": "__auto",
-            "range": true,
+            "columns": [],
+            "datasource": {
+              "type": "yesoreyeram-infinity-datasource",
+              "uid": "cel0yrzohhjwga"
+            },
+            "filters": [],
+            "format": "table",
+            "global_query_id": "",
+            "parser": "backend",
             "refId": "A",
-            "useBackend": false
+            "root_selector": "",
+            "source": "url",
+            "type": "json",
+            "url": "https://orpo-gitlab.elcom.local/api/v4/personal_access_tokens",
+            "url_options": {
+              "body_content_type": "text/plain",
+              "body_type": "raw",
+              "data": "",
+              "headers": [],
+              "method": "GET",
+              "params": [
+                {
+                  "key": "Authorization",
+                  "value": "Basic c21hcnRwdHRfc2VydmljZXM6R2hqY25qX0N2ZmhuZ25uNQ=="
+                }
+              ]
+            }
           }
         ],
         "title": "Panel Title",
         "type": "table"
-      },
-      {
-        "datasource": {
-          "type": "prometheus",
-          "uid": "Llmbz5f4z"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            }
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        },
-        "id": 1,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "percentChangeColorMode": "standard",
-          "reduceOptions": {
-            "calcs": [
-              "lastNotNull"
-            ],
-            "fields": "",
-            "values": false
-          },
-          "showPercentChange": false,
-          "textMode": "auto",
-          "wideLayout": true
-        },
-        "pluginVersion": "11.5.2",
-        "targets": [
-          {
-            "datasource": {
-              "type": "prometheus",
-              "uid": "Llmbz5f4z"
-            },
-            "disableTextWrap": false,
-            "editorMode": "code",
-            "expr": "count(gitlab_token)",
-            "fullMetaSearch": false,
-            "includeNullMetadata": true,
-            "instant": false,
-            "legendFormat": "__auto",
-            "range": true,
-            "refId": "A",
-            "useBackend": false
-          }
-        ],
-        "title": "Quantity tokens",
-        "type": "stat"
       },
       {
         "datasource": {
@@ -195,7 +148,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 8
+          "y": 0
         },
         "id": 2,
         "options": {
@@ -272,7 +225,7 @@
           "h": 8,
           "w": 12,
           "x": 12,
-          "y": 16
+          "y": 8
         },
         "id": 3,
         "options": {
@@ -312,6 +265,75 @@
           }
         ],
         "title": "Quantity expired tokens",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "Llmbz5f4z"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 18
+        },
+        "id": 1,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "percentChangeColorMode": "standard",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showPercentChange": false,
+          "textMode": "auto",
+          "wideLayout": true
+        },
+        "pluginVersion": "11.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "Llmbz5f4z"
+            },
+            "disableTextWrap": false,
+            "editorMode": "code",
+            "expr": "count(gitlab_token)",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A",
+            "useBackend": false
+          }
+        ],
+        "title": "Quantity tokens",
         "type": "stat"
       }
     ],
