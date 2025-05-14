@@ -1,5 +1,5 @@
 {
-  "apiVersion": "dashboard.grafana.app/v0alpha1",
+  "apiVersion": "dashboard.grafana.app/v1beta1",
   "kind": "Dashboard",
   "metadata": {
     "name": "pS6ZuGV7z"
@@ -1133,7 +1133,7 @@
     ],
     "preload": false,
     "refresh": "",
-    "schemaVersion": 40,
+    "schemaVersion": 41,
     "tags": [
       "blackbox",
       "prometheus"
